@@ -55,6 +55,57 @@
           bsonType: 'double',
           description: 'average rating for a producer'
         },
+        acceptedOrdersToCreate: {
+          bsonType: 'array',
+          description: 'Array of orders',
+          items: {
+            bsonType: 'object',
+            required: [
+              'foodList',
+              'paid',
+              'consumerId',
+              'amount',
+              'pickUpDateTime'
+            ],
+            properties: {
+              foodList: {
+                bsonType: 'array',
+                items: {
+                  bsonType: 'object',
+                  required: ['foodId', 'quantitiy'],
+                  properties: {
+                    foodId: {
+                      bsonType: 'double',
+                      description: 'food id of food',
+                    },
+                    quantity: {
+                      bsonType: 'int',
+                      description: 'number of food items in order'
+                    }
+                  }
+                }
+              }
+            },
+            properties: {
+              paid: {
+                bsonType: 'bool',
+                description: 'has order been paid for'
+              },
+              amount: {
+                bsonType: 'double',
+                description: 'total amount for order'
+              },
+              consumerId: {
+                bsonType: 'double',
+                description: 'consumer id of order'
+              },
+              pickUpDateTime: {
+                bsonType: 'date',
+                description: 'time order should be ready by'
+              }
+            }
+          }
+        },
         menu: {
           bsonType: 'object',
           required: [
