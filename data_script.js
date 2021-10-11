@@ -1,6 +1,7 @@
-//db.producer.deleteMany({})
+db.producer.deleteMany({});
+db.food.deleteMany({});
 
-var objId = ObjectId()
+var objId = ObjectId();
 
 db.producer.insertOne(
     {
@@ -26,9 +27,10 @@ db.producer.insertOne(
             thursday: [],
             friday: [],
             saturday: [] 
-        }
+        },
+        dateCreated: new Date()
     }
-)
+);
 
 db.food.insertMany([
     {
@@ -38,7 +40,8 @@ db.food.insertMany([
         photo: "N/A",
         price: Double(5.00),
         rating: Double(0.00),    
-        name: "Jenna's Vegan Blueberry Cookies"
+        name: "Jenna's Vegan Blueberry Cookies",
+        dateCreated: new Date()
     },
     {
         producerId: objId,
@@ -47,11 +50,28 @@ db.food.insertMany([
         photo: "N/A",
         price: Double(4.45),
         rating: Double(0.00),    
-        name: "Jenna's Vegan Chocolate Chip Cookies"
+        name: "Jenna's Vegan Chocolate Chip Cookies",
+        dateCreated: new Date()
     }
-])
+]);
+// Get food documents with a prouducerId of objId 
+var foodCursor = db.food.find({producerId: objId});
 
-var objId = ObjectId()
+// Create an array with foodIds 
+var arrayOfFoodIDS = foodCursor.map( function(myDoc) {
+        return myDoc._id
+    } 
+).toArray();
+
+// Sets the value of the food field to  arrayOfFoodIDS
+db.producer.updateOne(
+    {_id: objId},
+     {$set: 
+        {food: arrayOfFoodIDS} 
+    }
+);
+
+objId = ObjectId();
 
 db.producer.insertOne(
     {
@@ -77,9 +97,10 @@ db.producer.insertOne(
             thursday: [],
             friday: [],
             saturday: [] 
-        }
+        },
+        dateCreated: new Date()
     }
-)
+);
 
 db.food.insertMany([
     {
@@ -89,7 +110,8 @@ db.food.insertMany([
         photo: "N/A",
         price: Double(6.00),
         rating: Double(0.00),    
-        name: "Bob's Burgers"
+        name: "Bob's Burgers",
+        dateCreated: new Date()
     },
     {
         producerId: objId,
@@ -98,11 +120,26 @@ db.food.insertMany([
         photo: "N/A",
         price: Double(4.45),
         rating: Double(0.00),    
-        name: "Bob's Freshest Fries"
+        name: "Bob's Freshest Fries",
+        dateCreated: new Date()
     }
-])
+]);
 
-var objId = ObjectId()
+foodCursor = db.food.find({producerId: objId});
+
+arrayOfFoodIDS = foodCursor.map( function(myDoc) {
+        return myDoc._id
+    } 
+).toArray();
+
+db.producer.updateOne(
+    {_id: objId},
+     {$set: 
+        {food: arrayOfFoodIDS} 
+    }
+);
+
+objId = ObjectId();
 
 db.producer.insertOne(
     {
@@ -128,11 +165,12 @@ db.producer.insertOne(
           thursday: [],
           friday: [],
           saturday: []
-        }
+        },
+        dateCreated: new Date()
     }
-)
+);
 
-var objId = ObjectId()
+objId = ObjectId();
 
 db.producer.insertOne(
     {
@@ -158,9 +196,10 @@ db.producer.insertOne(
             thursday: [],
             friday: [],
             saturday: []
-        }
+        },
+        dateCreated: new Date()
     }
-)
+);
 
 db.food.insertMany([
     {
@@ -170,16 +209,18 @@ db.food.insertMany([
         photo: "N/A",
         price: Double(3.45),
         rating: Double(0.00),    
-        name: "Tacos"
+        name: "Tacos",
+        dateCreated: new Date()
     },
     {
         producerId: objId,
         dietPreference: "N/A",
-        description: "Peanut Butter Jeally",
+        description: "Peanut Butter Jelly",
         photo: "N/A",
         price: Double(2.45),
         rating: Double(0.00),    
-        name: "Peanut Butter Jeally"
+        name: "Peanut Butter Jeally",
+        dateCreated: new Date()
     },
     {
         producerId: objId,
@@ -188,7 +229,8 @@ db.food.insertMany([
         photo: "N/A",
         price: Double(1.45),
         rating: Double(0.00),    
-        name: "Ramen"
+        name: "Ramen",
+        dateCreated: new Date()
     },
     {
         producerId: objId,
@@ -197,6 +239,24 @@ db.food.insertMany([
         photo: "N/A",
         price: Double(5.25),
         rating: Double(0.00),    
-        name: "Pie"
+        name: "Pie",
+        dateCreated: new Date()
+    },
+]);
+
+// Get food documents with a prouducerId of objId 
+foodCursor = db.food.find({producerId: objId});
+
+// Create an array with foodIds 
+arrayOfFoodIDS = foodCursor.map( function(myDoc) {
+        return myDoc._id
+    } 
+).toArray();
+
+// Sets the value of the food field to  arrayOfFoodIDS
+db.producer.updateOne(
+    {_id: objId},
+     {$set: 
+        {food: arrayOfFoodIDS} 
     }
-])
+);
