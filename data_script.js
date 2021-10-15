@@ -1,6 +1,8 @@
 db.producer.deleteMany({});
 db.food.deleteMany({});
+db.review_for_producer.deleteMany({});
 
+// Producer Inserts
 var objId = ObjectId();
 
 db.producer.insertOne(
@@ -41,7 +43,10 @@ db.food.insertMany([
         price: Double(5.00),
         rating: Double(0.00),    
         name: "Jenna's Vegan Blueberry Cookies",
-        dateCreated: new Date()
+        portionSize: 1.4,
+        spicy: 0,
+        dateCreated: new Date(),
+        dateUpdated: new Date(),
     },
     {
         producerId: objId,
@@ -51,7 +56,10 @@ db.food.insertMany([
         price: Double(4.45),
         rating: Double(0.00),    
         name: "Jenna's Vegan Chocolate Chip Cookies",
-        dateCreated: new Date()
+        portionSize: 1.5,
+        spicy: 0,
+        dateCreated: new Date(),
+        dateUpdated: new Date()
     }
 ]);
 // Get food documents with a prouducerId of objId 
@@ -70,6 +78,23 @@ db.producer.updateOne(
         {food: arrayOfFoodIDS} 
     }
 );
+// Creating reviews for Jenna
+db.review_for_producer.insertMany([
+    {
+        "producerId": objId, 
+        "rating": Double(5.00),
+        // Reviews bounded to 300 characters
+        "description": "Jenna creates amazing cookies! Perfect for weekends.",
+    },
+    {
+        "producerId": objId, 
+        "rating": Double(4.50),
+        // Reviews bounded to 300 characters
+        "description": "Cute packaging!",
+    }
+]);
+
+
 
 objId = ObjectId();
 
@@ -111,7 +136,10 @@ db.food.insertMany([
         price: Double(6.00),
         rating: Double(0.00),    
         name: "Bob's Burgers",
-        dateCreated: new Date()
+        portionSize: 5,
+        spicy: "1",
+        dateCreated: new Date(),
+        dateUpdated: new Date()
     },
     {
         producerId: objId,
@@ -121,7 +149,10 @@ db.food.insertMany([
         price: Double(4.45),
         rating: Double(0.00),    
         name: "Bob's Freshest Fries",
-        dateCreated: new Date()
+        portionSize: 3,
+        spicy: 0,
+        dateCreated: new Date(),
+        dateUpdated: new Date()
     }
 ]);
 
@@ -139,6 +170,21 @@ db.producer.updateOne(
     }
 );
 
+db.review_for_producer.insertMany([
+    {
+        "producerId": objId,
+        "rating": Double(3.00),
+        "description": "Service was okay, not excellent. Food was good"
+    },
+    {
+        "producerId": objId,
+        "rating": Double(1.00),
+        "description": "COLD FOOD, WTF"
+    }
+])
+
+
+// Creating  Sullivan's data. He has created a new account.
 objId = ObjectId();
 
 db.producer.insertOne(
@@ -197,7 +243,7 @@ db.producer.insertOne(
             friday: [],
             saturday: []
         },
-        dateCreated: new Date()
+        dateCreated: new Date(),
     }
 );
 
@@ -210,7 +256,11 @@ db.food.insertMany([
         price: Double(3.45),
         rating: Double(0.00),    
         name: "Tacos",
-        dateCreated: new Date()
+        portionSize: 1.4,
+        spicy: 2,
+        allergy: ['soy', 'wheat'],
+        dateCreated: new Date(),
+        dateUpdated: new Date()
     },
     {
         producerId: objId,
@@ -220,7 +270,11 @@ db.food.insertMany([
         price: Double(2.45),
         rating: Double(0.00),    
         name: "Peanut Butter Jeally",
-        dateCreated: new Date()
+        portionSize: 1.8,
+        spicy: 0,
+        allergy: ['Peanut Butter', 'Dairy', 'Soy'],
+        dateCreated: new Date(),
+        dateUpdated: new Date()
     },
     {
         producerId: objId,
@@ -230,7 +284,11 @@ db.food.insertMany([
         price: Double(1.45),
         rating: Double(0.00),    
         name: "Ramen",
-        dateCreated: new Date()
+        portionSize: 3.2,
+        spicy: 1,
+        allergy: ['Soy'],
+        dateCreated: new Date(),
+        dateUpdated: new Date()
     },
     {
         producerId: objId,
@@ -240,7 +298,11 @@ db.food.insertMany([
         price: Double(5.25),
         rating: Double(0.00),    
         name: "Pie",
-        dateCreated: new Date()
+        portionSize: 3,
+        spicy: 0,
+        allergy: ['Dairy', 'Soy'],
+        dateCreated: new Date(),
+        dateUpdated: new Date()
     },
 ]);
 
@@ -260,3 +322,8 @@ db.producer.updateOne(
         {food: arrayOfFoodIDS} 
     }
 );
+
+
+
+
+
