@@ -38,9 +38,9 @@ db.food.insertMany([
     {
         producerId: objId,
         dietPreference: "Vegan",
-        description: "12 Blueberry Cookies",
+        description: "Blueberry Cookie",
         photo: "N/A",
-        price: Double(5.00),
+        price: Double(0.55),
         rating: Double(0.00),    
         name: "Jenna's Vegan Blueberry Cookies",
         portionSize: 1.4,
@@ -51,9 +51,9 @@ db.food.insertMany([
     {
         producerId: objId,
         dietPreference: "Vegan",
-        description: "12 Chocolate Chip Cookies",
+        description: "Chocolate Chip Cookie",
         photo: "N/A",
-        price: Double(4.45),
+        price: Double(0.55),
         rating: Double(0.00),    
         name: "Jenna's Vegan Chocolate Chip Cookies",
         portionSize: 1.5,
