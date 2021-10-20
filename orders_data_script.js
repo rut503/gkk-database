@@ -48,8 +48,8 @@ db.consumer.updateOne(
         _id: consumerDocument._id
     },
     {
-        $set: {
-            pendingOrdersForConsumer: [
+        $push: {
+            pendingOrdersForConsumer: 
                 {
                     items: [{
                         foodId: foodDocument._id,
@@ -60,9 +60,11 @@ db.consumer.updateOne(
                     amount: 10.80,
                     pickUpDateTime: new Date("2021-11-02T08:00:00")
                 }
-            ],
+        },
+        $set: {
             dateUpdated: new Date()
         }
+        
     }
 );
 
