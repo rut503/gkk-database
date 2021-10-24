@@ -1,28 +1,27 @@
 db.producer.deleteMany({});
 db.review_for_producer.deleteMany({});
 
-// Producer Inserts
-var objId = ObjectId();
-
 /********************************************************************** */
 // Jenna's Producer document
 /********************************************************************** */
+var objId = ObjectId();
+
 db.producer.insertOne(
     {
         _id: objId,
         firstName: 'Jenna',
         lastName: 'Smith',    
-        phoneNum: '815-765-7895',
+        phoneNum: "8157657895",
         address: {
             street: '456 Dogwood Ln',
             city: 'DeKalb',
             state: 'IL',
-            zip: '60115'
+            zip: "60115"
         },
         food: [],
         averageProducerRating: Double(0.00),
-        acceptedOrdersToCreate: [],
-        pendingOrderForProducer: [],
+        currentOrders: [],
+        archievedOrders: [],
         menu: {
             sunday: [],
             monday: [],
@@ -64,7 +63,7 @@ db.producer.insertOne(
         _id: objId,
         firstName: "Bob",
         lastName: "Smith",    
-        phoneNum: "815-765-7895",
+        phoneNum: "8157657895",
         address: {
             street: "456 Dogwood Ln",
             city: "DeKalb",
@@ -73,8 +72,8 @@ db.producer.insertOne(
         },
         food: [],
         averageProducerRating: Double(5.00),
-        acceptedOrdersToCreate: [],
-        pendingOrderForProducer: [],
+        currentOrders: [],
+        archievedOrders: [],
         menu: {
             sunday: [],
             monday: [],
@@ -113,7 +112,7 @@ db.producer.insertOne(
         _id: objId,
         firstName: "Sullivan",
         lastName: "Clarke",
-        phoneNum: "815-8944-513",
+        phoneNum: "815894413",
         address: {
           street: "Grand Avenue",
           city: "DeKalb",
@@ -122,8 +121,8 @@ db.producer.insertOne(
         },
         food: [],
         averageProducerRating: Double(0.00),
-        acceptedOrdersToCreate: [],
-        pendingOrderForProducer: [],
+        currentOrders: [],
+        archievedOrders: [],
         menu: {
           sunday: [],
           monday: [],
@@ -149,7 +148,7 @@ db.producer.insertOne(
         _id: objId,
         firstName: "Marietta",
         lastName: "Daugherty",
-        phoneNum: "815-9264-502",
+        phoneNum: "8159264502",
         address: {
             street: "Hunts Lane",
             city: "DeKalb",
@@ -158,8 +157,8 @@ db.producer.insertOne(
         },
         food: [],
         averageProducerRating: Double(0.00),
-        acceptedOrdersToCreate: [],
-        pendingOrderForProducer: [],
+        currentOrders: [],
+        archievedOrders: [],
         menu: {
             sunday: [],
             monday: [],

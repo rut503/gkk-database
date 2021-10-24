@@ -18,8 +18,8 @@ db.consumer.insertOne(
         zip: '60115'
     },
     averageConsumerRating: Double(0.00),
-    acceptedOrdersToPickup: [],
-    pendingOrdersForConsumer: [], 
+    currentOrders: [],
+    archievedOrders: [],
     dateCreated: new Date(),
     dateUpdated: new Date()
 });
@@ -43,8 +43,8 @@ db.consumer.insertOne(
             zip: '60115'
         },
         averageConsumerRating: Double(0.00),
-        acceptedOrdersToPickup: [],
-        pendingOrdersForConsumer: [], 
+        currentOrders: [],
+        archievedOrders: [],
         dateCreated: new Date(),
         dateUpdated: new Date()
     }
@@ -68,8 +68,8 @@ db.consumer.insertOne(
             zip: '60115'
         },
         averageConsumerRating: Double(0.00),
-        acceptedOrdersToPickup: [],
-        pendingOrdersForConsumer: [], 
+        currentOrders: [],
+        archievedOrders: [],
         dateCreated: new Date(),
         dateUpdated: new Date()
     }
