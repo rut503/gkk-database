@@ -11,12 +11,12 @@ db.producer.insertOne(
         _id: objId,
         firstName: 'Jenna',
         lastName: 'Smith',    
-        phoneNum: "8157657895",
+        phoneNum: '8157657895',
         address: {
             street: '456 Dogwood Ln',
             city: 'DeKalb',
             state: 'IL',
-            zip: "60115"
+            zip: '60115'
         },
         food: [],
         averageProducerRating: Double(0.00),
