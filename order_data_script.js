@@ -1,4 +1,5 @@
-db.order.deleteMany({});
+db.active_order.deleteMany({});
+db.archived_order.deleteMany({});
 
 const TAX_RATE = 0.0625;
 
@@ -30,7 +31,7 @@ var objId1 = new ObjectId();
 var objId2 = new ObjectId();
 var objId3 = new ObjectId();
 
-db.order.insertMany(
+db.active_order.insertMany(
     [
         {
             _id: objId1,
@@ -87,7 +88,7 @@ db.consumer.updateOne(
 objId1 = new ObjectId();
 objId2 = new ObjectId();
 
-db.order.insertMany(
+db.active_order.insertMany(
     [
         { 
             _id: objId1,
@@ -147,7 +148,7 @@ objId1 = new ObjectId();
 objId2 = new ObjectId();
 objId3 = new ObjectId();
 
-db.order.insertMany(
+db.active_order.insertMany(
     [
         {
             _id: objId1,
@@ -229,7 +230,7 @@ db.consumer.updateOne(
 objId1 = new ObjectId();
 objId2 = new ObjectId();
 
-db.order.insertMany(
+db.archived_order.insertMany(
     [
         {
             _id: objId1,
@@ -268,7 +269,7 @@ db.producer.updateOne(
         firstName: 'Jenna'
     },
     {
-        $push: {currentOrders: objId1 }
+        $push: {archivedOrders: objId1 }
     }
 );
 db.producer.updateOne(
@@ -276,7 +277,7 @@ db.producer.updateOne(
         firstName: 'Bob'
     },
     {
-        $push: {currentOrders: objId2}
+        $push: {archivedOrders: objId2}
     }
 );
 
@@ -285,7 +286,7 @@ db.consumer.updateOne(
         firstName: 'Octovio'
     },
     {
-        $push: {currentOrders: { $each: [ objId1, objId2 ] } }
+        $push: {archivedOrders: { $each: [ objId1, objId2 ] } }
     }
 );
 
