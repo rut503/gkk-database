@@ -129,7 +129,7 @@ db.food.insertMany([
         name: "Tacos",
         portionSize: 1.4,
         spicy: 2,
-        allergy: ['soy', 'wheat'],
+        allergy: ['Soy', 'Wheat'],
         dateCreated: new Date(),
         dateUpdated: new Date()
     },

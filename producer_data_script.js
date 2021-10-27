@@ -21,7 +21,7 @@ db.producer.insertOne(
         food: [],
         averageProducerRating: Double(0.00),
         currentOrders: [],
-        archievedOrders: [],
+        archivedOrders: [],
         menu: {
             sunday: {
                 breakfast: [],
@@ -101,7 +101,7 @@ db.producer.insertOne(
         food: [],
         averageProducerRating: Double(5.00),
         currentOrders: [],
-        archievedOrders: [],
+        archivedOrders: [],
         menu: {
             sunday: {
                 breakfast: [],
@@ -178,7 +178,7 @@ db.producer.insertOne(
         food: [],
         averageProducerRating: Double(0.00),
         currentOrders: [],
-        archievedOrders: [],
+        archivedOrders: [],
         menu: {
             sunday: {
                 breakfast: [],
@@ -242,7 +242,7 @@ db.producer.insertOne(
         food: [],
         averageProducerRating: Double(0.00),
         currentOrders: [],
-        archievedOrders: [],
+        archivedOrders: [],
         menu: {
             sunday: {
                 breakfast: [],
@@ -284,6 +284,3 @@ db.producer.insertOne(
         dateUpdated: new Date()
     }
 );
-
-
-print("Success");
