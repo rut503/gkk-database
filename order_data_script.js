@@ -244,7 +244,8 @@ db.archived_order.insertMany(
             status: "completed",
             mealTime: "dinner",
             pickUpDateTime: new Date("2021-10-25T20:00:00"),
-            dateCreated: new Date()
+            dateCreated: new Date(),
+            dateUpdate: new Date()
         },
         {
             _id: objId2,
@@ -287,6 +288,47 @@ db.consumer.updateOne(
     },
     {
         $push: {archivedOrders: { $each: [ objId1, objId2 ] } }
+    }
+);
+
+/********************************************************************** */
+// Antony's Order
+/********************************************************************** */
+objId1 = new ObjectId();
+
+db.archived_order.insertOne(
+    {
+        _id: objId1,
+        consumerId: consumerMap.get('Antony')._id,
+        producerId: producerMap.get('Jenna')._id,    
+        items: [{
+            foodId: foodMap.get('Jenna\'s Vegan Chocolate Chip Cookies'), 
+            quantity: 1
+        }],
+        amount: getTotalOrderPrice(foodMap.get('Jenna\'s Vegan Chocolate Chip Cookies').price, 1),
+        status: "canceled",
+        mealTime: "dinner",
+        pickUpDateTime: new Date("2021-10-25T04:00:00"),
+        dateCreated: new Date(),
+        dateUpdate: new Date()
+    }
+);
+
+db.producer.updateOne(
+    {
+        firstName: 'Jenna'
+    },
+    {
+        $push: {archivedOrders: objId1}
+    }
+);
+
+db.consumer.updateOne(
+    {
+        firstName: 'Antony'
+    },
+    {
+        $push: {archivedOrders: objId2 }
     }
 );
 

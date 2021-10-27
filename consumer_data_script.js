@@ -3,11 +3,8 @@ db.consumer.deleteMany({});
 /********************************************************************** */
 // Juan's Consumer Document
 /********************************************************************** */
-objId = ObjectId();
-
 db.consumer.insertOne(
 {
-    _id: objId,
     firstName: 'Juan',
     lastName: 'Lopez',    
     phoneNum: '815-789-0123',
@@ -17,9 +14,9 @@ db.consumer.insertOne(
         state: 'IL',
         zip: '60115'
     },
-    averageConsumerRating: Double(0.00),
+    averageConsumerRating: 0,
     currentOrders: [],
-    archievedOrders: [],
+    archivedOrders: [],
     dateCreated: new Date(),
     dateUpdated: new Date()
 });
@@ -28,11 +25,8 @@ db.consumer.insertOne(
 /********************************************************************** */
 // Gios's Consumer Document
 /********************************************************************** */
-objId = ObjectId();
-
 db.consumer.insertOne(    
     {
-        _id: objId,
         firstName: 'Gio',
         lastName: 'Gonzalez',    
         phoneNum: '815-709-0123',
@@ -42,9 +36,9 @@ db.consumer.insertOne(
             state: 'IL',
             zip: '60112'
         },
-        averageConsumerRating: Double(0.00),
+        averageConsumerRating: 0,
         currentOrders: [],
-        archievedOrders: [],
+        archivedOrders: [],
         dateCreated: new Date(),
         dateUpdated: new Date()
     }
@@ -53,11 +47,8 @@ db.consumer.insertOne(
 /********************************************************************** */
 // Jose's Consumer Document
 /********************************************************************** */
-objId = ObjectId();
-
 db.consumer.insertOne(    
     {
-        _id: objId,
         firstName: 'Jose',
         lastName: 'Hernandez',    
         phoneNum: '815-709-6489',
@@ -67,9 +58,9 @@ db.consumer.insertOne(
             state: 'IL',
             zip: '60112'
         },
-        averageConsumerRating: Double(0.00),
+        averageConsumerRating: 0,
         currentOrders: [],
-        archievedOrders: [],
+        archivedOrders: [],
         dateCreated: new Date(),
         dateUpdated: new Date()
     }
@@ -89,9 +80,31 @@ db.consumer.insertOne(
             state: 'IL',
             zip: '60115'
         },
-        averageConsumerRating: Double(0.00),
+        averageConsumerRating: 0,
         currentOrders: [],
-        archievedOrders: [],
+        archivedOrders: [],
+        dateCreated: new Date(),
+        dateUpdated: new Date()
+    }
+);
+
+/********************************************************************** */
+// Antony's Consumer Document
+/********************************************************************** */
+db.consumer.insertOne(
+    {
+        firstName: 'Antony',
+        lastName: 'Marc',    
+        phoneNum: '815-900-4797',
+        address: {
+            street: '1490 Farmstead Ln',
+            city: 'Malta',
+            state: 'IL',
+            zip: '60115'
+        },
+        averageConsumerRating: 0,
+        currentOrders: [],
+        archivedOrders: [],
         dateCreated: new Date(),
         dateUpdated: new Date()
     }
