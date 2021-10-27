@@ -23,13 +23,41 @@ db.producer.insertOne(
         currentOrders: [],
         archievedOrders: [],
         menu: {
-            sunday: [],
-            monday: [],
-            tuesday: [],
-            wednesday: [],
-            thursday: [],
-            friday: [],
-            saturday: [] 
+            sunday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            monday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            tuesday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            wednesday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            thursday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            friday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            saturday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            } 
         },
         dateCreated: new Date(),
         dateUpdated: new Date()
@@ -65,7 +93,7 @@ db.producer.insertOne(
         lastName: "Smith",    
         phoneNum: "8157657895",
         address: {
-            street: "456 Dogwood Ln",
+            street: "200 E Garden St",
             city: "DeKalb",
             state: "IL",
             zip: "60115"
@@ -75,13 +103,41 @@ db.producer.insertOne(
         currentOrders: [],
         archievedOrders: [],
         menu: {
-            sunday: [],
-            monday: [],
-            tuesday: [],
-            wednesday: [],
-            thursday: [],
-            friday: [],
-            saturday: [] 
+            sunday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            monday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            tuesday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            wednesday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            thursday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            friday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            saturday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            } 
         },
         dateCreated: new Date(),
         dateUpdated: new Date()
@@ -114,7 +170,7 @@ db.producer.insertOne(
         lastName: "Clarke",
         phoneNum: "815894413",
         address: {
-          street: "Grand Avenue",
+          street: "403 S 6th St",
           city: "DeKalb",
           state: "IL",
           zip: "60115"
@@ -124,13 +180,41 @@ db.producer.insertOne(
         currentOrders: [],
         archievedOrders: [],
         menu: {
-          sunday: [],
-          monday: [],
-          tuesday: [],
-          wednesday: [],
-          thursday: [],
-          friday: [],
-          saturday: []
+            sunday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            monday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            tuesday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            wednesday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            thursday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            friday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            saturday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            } 
         },
         dateCreated: new Date(),
         dateUpdated: new Date()
@@ -150,7 +234,7 @@ db.producer.insertOne(
         lastName: "Daugherty",
         phoneNum: "8159264502",
         address: {
-            street: "Hunts Lane",
+            street: "736 Seaman Ave",
             city: "DeKalb",
             state: "IL",
             zip: "60115"
@@ -160,13 +244,41 @@ db.producer.insertOne(
         currentOrders: [],
         archievedOrders: [],
         menu: {
-            sunday: [],
-            monday: [],
-            tuesday: [],
-            wednesday: [],
-            thursday: [],
-            friday: [],
-            saturday: []
+            sunday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            monday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            tuesday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            wednesday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            thursday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            friday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            },
+            saturday: {
+                breakfast: [],
+                lunch: [],
+                dinner: []
+            } 
         },
         dateCreated: new Date(),
         dateUpdated: new Date()

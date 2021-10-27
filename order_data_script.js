@@ -6,7 +6,6 @@ const TAX_RATE = 0.0625;
 var consumerMap = new Map();
 var producerMap = new Map();
 var foodMap = new Map();
-var mapCreated = false;
 
 var consumerCursor = db.consumer.find({});
 var producerCursor = db.producer.find({});
@@ -27,9 +26,14 @@ consumerCursor.forEach(function(myDoc){
 /********************************************************************** */
 // Juan's Order
 /********************************************************************** */
+var objId1 = new ObjectId();
+var objId2 = new ObjectId();
+var objId3 = new ObjectId();
+
 db.order.insertMany(
     [
         {
+            _id: objId1,
             consumerId: consumerMap.get('Juan')._id,
             producerId: producerMap.get('Jenna')._id,
             items:[{
@@ -43,6 +47,7 @@ db.order.insertMany(
             dateCreated: new Date()
         },
         {
+            _id: objId2,
             consumerId: consumerMap.get('Juan')._id,
             producerId: producerMap.get('Jenna')._id,
             items:[{
@@ -53,17 +58,39 @@ db.order.insertMany(
             status: "producer pending",
             mealTime: "breakfast",
             pickUpDateTime: new Date("2021-11-02T08:00:00"),
-            dateCreated: new Date()
+            dateCreated: new Date(),
+            dateUpdated: new Date()
         }
     ]
 );
 
+// Associated order document with it's producer and consumer document. 
+db.producer.updateOne(
+    {
+        firstName: 'Jenna'
+    },
+    {
+        $push: {currentOrders: { $each: [ objId1, objId2 ] } }
+    }
+)
+db.consumer.updateOne(
+    {
+        firstName: 'Juan'
+    },
+    {
+        $push: {currentOrders: { $each: [ objId1, objId2 ] } }
+    }
+);
 /********************************************************************** */
 // Gio's Order
 /********************************************************************** */
+objId1 = new ObjectId();
+objId2 = new ObjectId();
+
 db.order.insertMany(
     [
         { 
+            _id: objId1,
             consumerId: consumerMap.get('Gio')._id,
             producerId: producerMap.get('Marietta')._id,    
             items: [{
@@ -74,9 +101,11 @@ db.order.insertMany(
             status: "producer accepted",
             mealTime: "dinner",
             pickUpDateTime: new Date("2021-11-02T18:00:00"),
-            dateCreated: new Date()
+            dateCreated: new Date(),
+            dateUpdated: new Date()
         },
         { 
+            _id: objId2,
             consumerId: consumerMap.get('Gio')._id,
             producerId: producerMap.get('Marietta')._id,    
             items: [
@@ -87,17 +116,41 @@ db.order.insertMany(
             status: "producer accepted",
             mealTime: "dinner",
             pickUpDateTime: new Date("2021-11-06T17:00:00"),
-            dateCreated: new Date()
+            dateCreated: new Date(),
+            dateUpdated: new Date()
         }
     ]
-)
+);
+
+// Associated order document with it's producer and consumer document. 
+db.producer.updateOne(
+    {
+        firstName: 'Marietta'
+    },
+    {
+        $push: {currentOrders: { $each: [ objId1, objId2 ] } }
+    }
+);
+db.consumer.updateOne(
+    {
+        firstName: 'Gio'
+    },
+    {
+        $push: {currentOrders: { $each: [ objId1, objId2 ] } }
+    }
+);
 
 /********************************************************************** */
 // Jose's Order
 /********************************************************************** */
+objId1 = new ObjectId();
+objId2 = new ObjectId();
+objId3 = new ObjectId();
+
 db.order.insertMany(
     [
         {
+            _id: objId1,
             consumerId: consumerMap.get('Jose')._id,
             producerId: producerMap.get('Jenna')._id,    
             items: [{
@@ -111,6 +164,7 @@ db.order.insertMany(
             dateCreated: new Date()
         },
         {
+            _id: objId2,
             consumerId: consumerMap.get('Jose')._id,
             producerId: producerMap.get('Bob')._id,    
             items: [{
@@ -121,9 +175,11 @@ db.order.insertMany(
             status: "producer accepted",
             mealTime: "lunch",
             pickUpDateTime: new Date("2021-11-02T13:00:00"),
-            dateCreated: new Date()
+            dateCreated: new Date(),
+            dateUpdated: new Date()
         },
         {
+            _id: objId3,
             consumerId: consumerMap.get('Jose')._id,
             producerId: producerMap.get('Bob')._id,    
             items: [{
@@ -134,10 +190,104 @@ db.order.insertMany(
             status: "producer ready",
             mealTime: "breakfast",
             pickUpDateTime: new Date("2021-11-02T08:00:00"),
-            dateCreated: new Date()
+            dateCreated: new Date(),
+            dateUpdated: new Date()
         }
     ]
-)
+);
+
+// Associated order document with it's producer and consumer document. 
+db.producer.updateOne(
+    {
+        firstName: 'Jenna'
+    },
+    {
+        $push: {currentOrders: objId1 }
+    }
+);
+db.producer.updateOne(
+    {
+        firstName: 'Bob'
+    },
+    {
+        $push: {currentOrders: { $each: [objId2, objId3] }}
+    }
+);
+
+db.consumer.updateOne(
+    {
+        firstName: 'Jose'
+    },
+    {
+        $push: {currentOrders: { $each: [ objId1, objId2, objId3 ] } }
+    }
+);
+
+/********************************************************************** */
+// Octovio's Order
+/********************************************************************** */
+objId1 = new ObjectId();
+objId2 = new ObjectId();
+
+db.order.insertMany(
+    [
+        {
+            _id: objId1,
+            consumerId: consumerMap.get('Octovio')._id,
+            producerId: producerMap.get('Jenna')._id,    
+            items: [{
+                foodId: foodMap.get('Jenna\'s Vegan Chocolate Chip Cookies'), 
+                quantity: 6
+            }],
+            amount: getTotalOrderPrice(foodMap.get('Jenna\'s Vegan Chocolate Chip Cookies').price, 6),
+            status: "completed",
+            mealTime: "dinner",
+            pickUpDateTime: new Date("2021-10-25T20:00:00"),
+            dateCreated: new Date()
+        },
+        {
+            _id: objId2,
+            consumerId: consumerMap.get('Octovio')._id,
+            producerId: producerMap.get('Bob')._id,    
+            items: [{
+                foodId: foodMap.get('Bob\'s Burgers'), 
+                quantity: 7
+            }],
+            amount: getTotalOrderPrice(foodMap.get('Bob\'s Burgers').price, 7),
+            status: "completed",
+            mealTime: "lunch",
+            pickUpDateTime: new Date("2021-10-25T13:00:00"),
+            dateCreated: new Date(),
+            dateUpdated: new Date()
+        },
+    ]
+);
+
+db.producer.updateOne(
+    {
+        firstName: 'Jenna'
+    },
+    {
+        $push: {currentOrders: objId1 }
+    }
+);
+db.producer.updateOne(
+    {
+        firstName: 'Bob'
+    },
+    {
+        $push: {currentOrders: objId2}
+    }
+);
+
+db.consumer.updateOne(
+    {
+        firstName: 'Octovio'
+    },
+    {
+        $push: {currentOrders: { $each: [ objId1, objId2 ] } }
+    }
+);
 
 /********************************************************************** */
 // Helper Functions

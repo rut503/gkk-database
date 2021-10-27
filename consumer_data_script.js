@@ -12,7 +12,7 @@ db.consumer.insertOne(
     lastName: 'Lopez',    
     phoneNum: '815-789-0123',
     address: {
-        street: '123 Grove St',
+        street: '656 Glidden Ave',
         city: 'DeKalb',
         state: 'IL',
         zip: '60115'
@@ -37,10 +37,10 @@ db.consumer.insertOne(
         lastName: 'Gonzalez',    
         phoneNum: '815-709-0123',
         address: {
-            street: '345 Grove St',
+            street: '60 N Nina St',
             city: 'Cortland',
             state: 'IL',
-            zip: '60115'
+            zip: '60112'
         },
         averageConsumerRating: Double(0.00),
         currentOrders: [],
@@ -62,8 +62,30 @@ db.consumer.insertOne(
         lastName: 'Hernandez',    
         phoneNum: '815-709-6489',
         address: {
-            street: '347 Grove St',
+            street: '26 N Nina St',
             city: 'Cortland',
+            state: 'IL',
+            zip: '60112'
+        },
+        averageConsumerRating: Double(0.00),
+        currentOrders: [],
+        archievedOrders: [],
+        dateCreated: new Date(),
+        dateUpdated: new Date()
+    }
+);
+
+/********************************************************************** */
+// Octovio's Consumer Document
+/********************************************************************** */
+db.consumer.insertOne(    
+    {
+        firstName: 'Octovio',
+        lastName: 'Ramirez',    
+        phoneNum: '815-819-6927',
+        address: {
+            street: '306 W Hillcrest Dr',
+            city: 'DeKalb',
             state: 'IL',
             zip: '60115'
         },
