@@ -49,6 +49,13 @@ db.producer.updateOne(
     {
         $set: {
             food: arrayOfFoodIDS,
+            "menu.sunday.breakfast": arrayOfFoodIDS,
+            "menu.monday.breakfast": arrayOfFoodIDS,
+            "menu.tuesday.breakfast": arrayOfFoodIDS,
+            "menu.wednesday.breakfast": arrayOfFoodIDS,
+            "menu.thursday.breakfast": arrayOfFoodIDS,
+            "menu.friday.breakfast": arrayOfFoodIDS,
+            "menu.saturday.breakfast": arrayOfFoodIDS,
             dateUpdated: new Date()
         } 
     }
@@ -102,6 +109,12 @@ db.producer.updateOne(
     {
         $set: {
             food: arrayOfFoodIDS,
+            "menu.friday.lunch": arrayOfFoodIDS,
+            "menu.friday.dinner": arrayOfFoodIDS,
+            "menu.sunday.lunch": arrayOfFoodIDS,
+            "menu.sunday.dinner": arrayOfFoodIDS,
+            "menu.saturday.lunch": arrayOfFoodIDS,
+            "menu.saturday.dinner": arrayOfFoodIDS,
             dateUpdated: new Date()
         } 
     }
@@ -196,3 +209,20 @@ db.producer.updateOne(
         } 
     }
 );
+
+db.producer.updateOne(
+    {
+        _id: foodDocument._id
+    },
+    {
+        $push: {
+            "menu.monday.dinner": arrayOfFoodIDS[0],
+            "menu.tuesday.dinner": arrayOfFoodIDS[0],
+            "menu.friday.lunch": arrayOfFoodIDS[1],
+            "menu.friday.dinner": arrayOfFoodIDS[2],
+            "menu.saturday.lunch": arrayOfFoodIDS[1],
+            "menu.saturday.dinner": arrayOfFoodIDS[2],
+            "menu.sunday.dinner": arrayOfFoodIDS[3],
+        }
+    }
+)
