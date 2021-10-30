@@ -44,7 +44,7 @@ db.active_order.insertMany(
             amount: getTotalOrderPrice(foodMap.get('Jenna\'s Vegan Blueberry Cookies').price, 12),
             status: "producer pending",
             mealTime: "breakfast",
-            pickUpDateTime: new Date("2021-11-01T08:00:00"),
+            pickUpDateTime: getDateInFuture('breakfast', 1),
             dateCreated: new Date()
         },
         {
@@ -58,7 +58,7 @@ db.active_order.insertMany(
             amount: getTotalOrderPrice(foodMap.get('Jenna\'s Vegan Chocolate Chip Cookies').price, 24),
             status: "producer pending",
             mealTime: "breakfast",
-            pickUpDateTime: new Date("2021-11-02T08:00:00"),
+            pickUpDateTime: getDateInFuture('breakfast', 7),
             dateCreated: new Date(),
             dateUpdated: new Date()
         }
@@ -101,7 +101,7 @@ db.active_order.insertMany(
             amount: getTotalOrderPrice(foodMap.get('Tacos').price, 2),
             status: "producer accepted",
             mealTime: "dinner",
-            pickUpDateTime: new Date("2021-11-02T18:00:00"),
+            pickUpDateTime: getDateInFuture('dinner', 6),
             dateCreated: new Date(),
             dateUpdated: new Date()
         },
@@ -116,7 +116,7 @@ db.active_order.insertMany(
             amount: getTotalOrderPrice(foodMap.get('Pie').price, 2) + getTotalOrderPrice(foodMap.get('Tacos').price, 5),
             status: "producer accepted",
             mealTime: "dinner",
-            pickUpDateTime: new Date("2021-11-06T17:00:00"),
+            pickUpDateTime: getDateInFuture('dinner', 5),
             dateCreated: new Date(),
             dateUpdated: new Date()
         }
@@ -161,7 +161,7 @@ db.active_order.insertMany(
             amount: getTotalOrderPrice(foodMap.get('Jenna\'s Vegan Blueberry Cookies').price, 48),
             status: "producer accepted",
             mealTime: "dinner",
-            pickUpDateTime: new Date("2021-11-02T20:00:00"),
+            pickUpDateTime: getDateInFuture('dinner', 2),
             dateCreated: new Date()
         },
         {
@@ -175,7 +175,7 @@ db.active_order.insertMany(
             amount: getTotalOrderPrice(foodMap.get('Bob\'s Burgers').price, 2),
             status: "producer accepted",
             mealTime: "lunch",
-            pickUpDateTime: new Date("2021-11-02T13:00:00"),
+            pickUpDateTime:getDateInFuture('lunch', 2),
             dateCreated: new Date(),
             dateUpdated: new Date()
         },
@@ -190,7 +190,7 @@ db.active_order.insertMany(
             amount: getTotalOrderPrice(foodMap.get('Bob\'s Burgers').price, 1),
             status: "producer ready",
             mealTime: "breakfast",
-            pickUpDateTime: new Date("2021-11-02T08:00:00"),
+            pickUpDateTime: getDateInFuture('breakfast', 2),
             dateCreated: new Date(),
             dateUpdated: new Date()
         }
@@ -243,7 +243,7 @@ db.archived_order.insertMany(
             amount: getTotalOrderPrice(foodMap.get('Jenna\'s Vegan Chocolate Chip Cookies').price, 6),
             status: "completed",
             mealTime: "dinner",
-            pickUpDateTime: new Date("2021-10-25T20:00:00"),
+            pickUpDateTime: getDateInFuture('dinner', 5),
             dateCreated: new Date(),
             dateUpdate: new Date()
         },
@@ -258,7 +258,7 @@ db.archived_order.insertMany(
             amount: getTotalOrderPrice(foodMap.get('Bob\'s Burgers').price, 7),
             status: "completed",
             mealTime: "lunch",
-            pickUpDateTime: new Date("2021-10-25T13:00:00"),
+            pickUpDateTime: getDateInFuture('lunch', 3),
             dateCreated: new Date(),
             dateUpdated: new Date()
         },
@@ -308,7 +308,7 @@ db.archived_order.insertOne(
         amount: getTotalOrderPrice(foodMap.get('Jenna\'s Vegan Chocolate Chip Cookies').price, 1),
         status: "canceled",
         mealTime: "dinner",
-        pickUpDateTime: new Date("2021-10-25T04:00:00"),
+        pickUpDateTime: getDateInFuture('dinner', 2),
         dateCreated: new Date(),
         dateUpdate: new Date()
     }
@@ -338,4 +338,24 @@ db.consumer.updateOne(
 function getTotalOrderPrice(price, quantity){
     var intVersion = price * quantity + (price * quantity * TAX_RATE);
     return intVersion/100;
+};
+
+function getDateInFuture(mealType, daysAhead){
+    // Time for meal
+    var mealTime;
+    // Future date, created based on mealtime and 'daysAhead' number of days a head
+    var futureDate;
+    if(mealType == 'breakfast'){
+        mealTime = ISODate().setHours(8)
+    }
+    else if(mealType == 'lunch'){
+        mealTime = ISODate().setHours(13)
+    }
+    else{
+        mealTime = ISODate().setHours(18)
+    }
+
+    futureDate = new Date(mealTime + 86400 * daysAhead * 1000)
+
+    return futureDate
 };
