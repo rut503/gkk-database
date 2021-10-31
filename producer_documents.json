@@ -1,0 +1,77 @@
+[
+    {
+        "firstName": "Bob",
+        "lastName": "Smith",    
+        "phoneNum": "815-765-7895",
+        "address": {
+            "street": "456 Dogwood Ln",
+            "city": "DeKalb",
+            "state": "IL",
+            "zip": "60115"
+        },
+        "food": [],
+        "averageProducerRating": 5.00,
+        "acceptedOrdersToCreate": [],
+        "pendingOrderForProducer": [],
+        "menu": {
+            "sunday": [],
+            "monday": [],
+            "tuesday": [],
+            "wednesday": [],
+            "thursday": [],
+            "friday": [],
+            "saturday": [] 
+        }
+    },
+    
+    {
+          "firstName": "Sullivan",
+          "lastName": "Clarke",
+          "phoneNum": "815-8944-513",
+          "address": {
+            "street": "Grand Avenue",
+            "city": "DeKalb",
+            "state": "IL",
+            "zip": "60115"
+          },
+          "food": [],
+          "averageProducerRating": 5.00,
+          "acceptedOrdersToCreate": [],
+          "pendingOrderForProducer": [],
+          "menu": {
+            "sunday": [],
+            "monday": [],
+            "tuesday": [],
+            "wednesday": [],
+            "thursday": [],
+            "friday": [],
+            "saturday": []
+          }
+    },
+    
+    
+    {
+        "firstName": "Marietta",
+        "lastName": "Daugherty",
+        "phoneNum": "815-9264-502",
+        "address": {
+            "street": "Hunts Lane",
+            "city": "DeKalb",
+            "state": "IL",
+            "zip": "60115"
+        },
+        "food": [],
+        "averageProducerRating": 5.00,
+        "acceptedOrdersToCreate": [],
+        "pendingOrderForProducer": [],
+        "menu": {
+            "sunday": [],
+            "monday": [],
+            "tuesday": [],
+            "wednesday": [],
+            "thursday": [],
+            "friday": [],
+            "saturday": []
+        }
+    }
+]
