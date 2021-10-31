@@ -3,25 +3,25 @@ db.archived_order.deleteMany({});
 
 const TAX_RATE = 0.0625;
 
-// Maps to store consumer, producer and food documents. 
+// Maps to store consumer, producer and food_item documents. 
 var consumerMap = new Map();
 var producerMap = new Map();
-var foodMap = new Map();
+var foodItemMap = new Map();
 
 var consumerCursor = db.consumer.find({});
 var producerCursor = db.producer.find({});
-var foodCursor = db.food.find({});
+var foodCursor = db.food_item.find({});
 
 foodCursor.forEach(function(myDoc){
-    foodMap.set(myDoc.name, myDoc);
+    foodItemMap.set(myDoc.name, myDoc);
 });
 
 producerCursor.forEach(function(myDoc){
-    producerMap.set(myDoc.firstName, myDoc);
+    producerMap.set(myDoc.first_name, myDoc);
 });
 
 consumerCursor.forEach(function(myDoc){
-    consumerMap.set(myDoc.firstName, myDoc);
+    consumerMap.set(myDoc.first_name, myDoc);
 });
 
 /********************************************************************** */
@@ -35,32 +35,32 @@ db.active_order.insertMany(
     [
         {
             _id: objId1,
-            consumerId: consumerMap.get('Juan')._id,
-            producerId: producerMap.get('Jenna')._id,
+            consumer_id: consumerMap.get('Juan')._id,
+            producer_id: producerMap.get('Jenna')._id,
             items:[{
-                foodId: foodMap.get('Jenna\'s Vegan Blueberry Cookies')._id,
+                food_item_id: foodItemMap.get('Jenna\'s Vegan Blueberry Cookies')._id,
                 quantity: 12
             }],
-            amount: getTotalOrderPrice(foodMap.get('Jenna\'s Vegan Blueberry Cookies').price, 12),
+            amount: getTotalOrderPrice(foodItemMap.get('Jenna\'s Vegan Blueberry Cookies').price, 12),
             status: "producer pending",
-            mealTime: "breakfast",
-            pickUpDateTime: getDateInFuture('breakfast', 1),
-            dateCreated: new Date()
+            meal_time: "breakfast",
+            order_due_datetime: getDateInFuture('breakfast', 1),
+            date_created: new Date()
         },
         {
             _id: objId2,
-            consumerId: consumerMap.get('Juan')._id,
-            producerId: producerMap.get('Jenna')._id,
+            consumer_id: consumerMap.get('Juan')._id,
+            producer_id: producerMap.get('Jenna')._id,
             items:[{
-                foodId: foodMap.get('Jenna\'s Vegan Chocolate Chip Cookies')._id,
+                food_item_id: foodItemMap.get('Jenna\'s Vegan Chocolate Chip Cookies')._id,
                 quantity: 24
             }],
-            amount: getTotalOrderPrice(foodMap.get('Jenna\'s Vegan Chocolate Chip Cookies').price, 24),
+            amount: getTotalOrderPrice(foodItemMap.get('Jenna\'s Vegan Chocolate Chip Cookies').price, 24),
             status: "producer pending",
-            mealTime: "breakfast",
-            pickUpDateTime: getDateInFuture('breakfast', 7),
-            dateCreated: new Date(),
-            dateUpdated: new Date()
+            meal_time: "breakfast",
+            order_due_datetime: getDateInFuture('breakfast', 7),
+            date_created: new Date(),
+            date_updated: new Date()
         }
     ]
 );
@@ -68,18 +68,18 @@ db.active_order.insertMany(
 // Associated order document with it's producer and consumer document. 
 db.producer.updateOne(
     {
-        firstName: 'Jenna'
+        first_name: 'Jenna'
     },
     {
-        $push: {currentOrders: { $each: [ objId1, objId2 ] } }
+        $push: {current_orders: { $each: [ objId1, objId2 ] } }
     }
 )
 db.consumer.updateOne(
     {
-        firstName: 'Juan'
+        first_name: 'Juan'
     },
     {
-        $push: {currentOrders: { $each: [ objId1, objId2 ] } }
+        $push: {current_orders: { $each: [ objId1, objId2 ] } }
     }
 );
 /********************************************************************** */
@@ -92,33 +92,33 @@ db.active_order.insertMany(
     [
         { 
             _id: objId1,
-            consumerId: consumerMap.get('Gio')._id,
-            producerId: producerMap.get('Marietta')._id,    
+            consumer_id: consumerMap.get('Gio')._id,
+            producer_id: producerMap.get('Marietta')._id,    
             items: [{
-                foodId: foodMap.get('Tacos'), 
+                food_item_id: foodItemMap.get('Tacos'), 
                 quantity: 2
             }],
-            amount: getTotalOrderPrice(foodMap.get('Tacos').price, 2),
+            amount: getTotalOrderPrice(foodItemMap.get('Tacos').price, 2),
             status: "producer accepted",
-            mealTime: "dinner",
-            pickUpDateTime: getDateInFuture('dinner', 6),
-            dateCreated: new Date(),
-            dateUpdated: new Date()
+            meal_time: "dinner",
+            order_due_datetime: getDateInFuture('dinner', 6),
+            date_created: new Date(),
+            date_updated: new Date()
         },
         { 
             _id: objId2,
-            consumerId: consumerMap.get('Gio')._id,
-            producerId: producerMap.get('Marietta')._id,    
+            consumer_id: consumerMap.get('Gio')._id,
+            producer_id: producerMap.get('Marietta')._id,    
             items: [
-                {foodId: foodMap.get('Pie'), quantity: 2},
-                {foodId: foodMap.get('Tacos'), quantity: 5}
+                {food_item_id: foodItemMap.get('Pie'), quantity: 2},
+                {food_item_id: foodItemMap.get('Tacos'), quantity: 5}
             ],
-            amount: getTotalOrderPrice(foodMap.get('Pie').price, 2) + getTotalOrderPrice(foodMap.get('Tacos').price, 5),
+            amount: getTotalOrderPrice(foodItemMap.get('Pie').price, 2) + getTotalOrderPrice(foodItemMap.get('Tacos').price, 5),
             status: "producer accepted",
-            mealTime: "dinner",
-            pickUpDateTime: getDateInFuture('dinner', 5),
-            dateCreated: new Date(),
-            dateUpdated: new Date()
+            meal_time: "dinner",
+            order_due_datetime: getDateInFuture('dinner', 5),
+            date_created: new Date(),
+            date_updated: new Date()
         }
     ]
 );
@@ -126,18 +126,18 @@ db.active_order.insertMany(
 // Associated order document with it's producer and consumer document. 
 db.producer.updateOne(
     {
-        firstName: 'Marietta'
+        first_name: 'Marietta'
     },
     {
-        $push: {currentOrders: { $each: [ objId1, objId2 ] } }
+        $push: {current_orders: { $each: [ objId1, objId2 ] } }
     }
 );
 db.consumer.updateOne(
     {
-        firstName: 'Gio'
+        first_name: 'Gio'
     },
     {
-        $push: {currentOrders: { $each: [ objId1, objId2 ] } }
+        $push: {current_orders: { $each: [ objId1, objId2 ] } }
     }
 );
 
@@ -152,47 +152,47 @@ db.active_order.insertMany(
     [
         {
             _id: objId1,
-            consumerId: consumerMap.get('Jose')._id,
-            producerId: producerMap.get('Jenna')._id,    
+            consumer_id: consumerMap.get('Jose')._id,
+            producer_id: producerMap.get('Jenna')._id,    
             items: [{
-                foodId: foodMap.get('Jenna\'s Vegan Blueberry Cookies'), 
+                food_item_id: foodItemMap.get('Jenna\'s Vegan Blueberry Cookies'), 
                 quantity: 48
             }],
-            amount: getTotalOrderPrice(foodMap.get('Jenna\'s Vegan Blueberry Cookies').price, 48),
+            amount: getTotalOrderPrice(foodItemMap.get('Jenna\'s Vegan Blueberry Cookies').price, 48),
             status: "producer accepted",
-            mealTime: "dinner",
-            pickUpDateTime: getDateInFuture('dinner', 2),
-            dateCreated: new Date()
+            meal_time: "dinner",
+            order_due_datetime: getDateInFuture('dinner', 2),
+            date_created: new Date()
         },
         {
             _id: objId2,
-            consumerId: consumerMap.get('Jose')._id,
-            producerId: producerMap.get('Bob')._id,    
+            consumer_id: consumerMap.get('Jose')._id,
+            producer_id: producerMap.get('Bob')._id,    
             items: [{
-                foodId: foodMap.get('Bob\'s Burgers'), 
+                food_item_id: foodItemMap.get('Bob\'s Burgers'), 
                 quantity: 2
             }],
-            amount: getTotalOrderPrice(foodMap.get('Bob\'s Burgers').price, 2),
+            amount: getTotalOrderPrice(foodItemMap.get('Bob\'s Burgers').price, 2),
             status: "producer accepted",
-            mealTime: "lunch",
-            pickUpDateTime:getDateInFuture('lunch', 2),
-            dateCreated: new Date(),
-            dateUpdated: new Date()
+            meal_time: "lunch",
+            order_due_datetime:getDateInFuture('lunch', 2),
+            date_created: new Date(),
+            date_updated: new Date()
         },
         {
             _id: objId3,
-            consumerId: consumerMap.get('Jose')._id,
-            producerId: producerMap.get('Bob')._id,    
+            consumer_id: consumerMap.get('Jose')._id,
+            producer_id: producerMap.get('Bob')._id,    
             items: [{
-                foodId: foodMap.get('Bob\'s Burgers'), 
+                food_item_id: foodItemMap.get('Bob\'s Burgers'), 
                 quantity: 1
             }],
-            amount: getTotalOrderPrice(foodMap.get('Bob\'s Burgers').price, 1),
+            amount: getTotalOrderPrice(foodItemMap.get('Bob\'s Burgers').price, 1),
             status: "producer ready",
-            mealTime: "breakfast",
-            pickUpDateTime: getDateInFuture('breakfast', 2),
-            dateCreated: new Date(),
-            dateUpdated: new Date()
+            meal_time: "breakfast",
+            order_due_datetime: getDateInFuture('breakfast', 2),
+            date_created: new Date(),
+            date_updated: new Date()
         }
     ]
 );
@@ -200,27 +200,27 @@ db.active_order.insertMany(
 // Associated order document with it's producer and consumer document. 
 db.producer.updateOne(
     {
-        firstName: 'Jenna'
+        first_name: 'Jenna'
     },
     {
-        $push: {currentOrders: objId1 }
+        $push: {current_orders: objId1 }
     }
 );
 db.producer.updateOne(
     {
-        firstName: 'Bob'
+        first_name: 'Bob'
     },
     {
-        $push: {currentOrders: { $each: [objId2, objId3] }}
+        $push: {current_orders: { $each: [objId2, objId3] }}
     }
 );
 
 db.consumer.updateOne(
     {
-        firstName: 'Jose'
+        first_name: 'Jose'
     },
     {
-        $push: {currentOrders: { $each: [ objId1, objId2, objId3 ] } }
+        $push: {current_orders: { $each: [ objId1, objId2, objId3 ] } }
     }
 );
 
@@ -234,60 +234,60 @@ db.archived_order.insertMany(
     [
         {
             _id: objId1,
-            consumerId: consumerMap.get('Octovio')._id,
-            producerId: producerMap.get('Jenna')._id,    
+            consumer_id: consumerMap.get('Octovio')._id,
+            producer_id: producerMap.get('Jenna')._id,    
             items: [{
-                foodId: foodMap.get('Jenna\'s Vegan Chocolate Chip Cookies'), 
+                food_item_id: foodItemMap.get('Jenna\'s Vegan Chocolate Chip Cookies'), 
                 quantity: 6
             }],
-            amount: getTotalOrderPrice(foodMap.get('Jenna\'s Vegan Chocolate Chip Cookies').price, 6),
+            amount: getTotalOrderPrice(foodItemMap.get('Jenna\'s Vegan Chocolate Chip Cookies').price, 6),
             status: "completed",
-            mealTime: "dinner",
-            pickUpDateTime: getDateInFuture('dinner', 5),
-            dateCreated: new Date(),
-            dateUpdate: new Date()
+            meal_time: "dinner",
+            order_due_datetime: getDateInFuture('dinner', 5),
+            date_created: new Date(),
+            date_updated: new Date()
         },
         {
             _id: objId2,
-            consumerId: consumerMap.get('Octovio')._id,
-            producerId: producerMap.get('Bob')._id,    
+            consumer_id: consumerMap.get('Octovio')._id,
+            producer_id: producerMap.get('Bob')._id,    
             items: [{
-                foodId: foodMap.get('Bob\'s Burgers'), 
+                food_item_id: foodItemMap.get('Bob\'s Burgers'), 
                 quantity: 7
             }],
-            amount: getTotalOrderPrice(foodMap.get('Bob\'s Burgers').price, 7),
+            amount: getTotalOrderPrice(foodItemMap.get('Bob\'s Burgers').price, 7),
             status: "completed",
-            mealTime: "lunch",
-            pickUpDateTime: getDateInFuture('lunch', 3),
-            dateCreated: new Date(),
-            dateUpdated: new Date()
+            meal_time: "lunch",
+            order_due_datetime: getDateInFuture('lunch', 3),
+            date_created: new Date(),
+            date_updated: new Date()
         },
     ]
 );
 
 db.producer.updateOne(
     {
-        firstName: 'Jenna'
+        first_name: 'Jenna'
     },
     {
-        $push: {archivedOrders: objId1 }
+        $push: {archived_orders: objId1 }
     }
 );
 db.producer.updateOne(
     {
-        firstName: 'Bob'
+        first_name: 'Bob'
     },
     {
-        $push: {archivedOrders: objId2}
+        $push: {archived_orders: objId2}
     }
 );
 
 db.consumer.updateOne(
     {
-        firstName: 'Octovio'
+        first_name: 'Octovio'
     },
     {
-        $push: {archivedOrders: { $each: [ objId1, objId2 ] } }
+        $push: {archived_orders: { $each: [ objId1, objId2 ] } }
     }
 );
 
@@ -299,36 +299,36 @@ objId1 = new ObjectId();
 db.archived_order.insertOne(
     {
         _id: objId1,
-        consumerId: consumerMap.get('Antony')._id,
-        producerId: producerMap.get('Jenna')._id,    
+        consumer_id: consumerMap.get('Antony')._id,
+        producer_id: producerMap.get('Jenna')._id,    
         items: [{
-            foodId: foodMap.get('Jenna\'s Vegan Chocolate Chip Cookies'), 
+            food_item_id: foodItemMap.get('Jenna\'s Vegan Chocolate Chip Cookies'), 
             quantity: 1
         }],
-        amount: getTotalOrderPrice(foodMap.get('Jenna\'s Vegan Chocolate Chip Cookies').price, 1),
+        amount: getTotalOrderPrice(foodItemMap.get('Jenna\'s Vegan Chocolate Chip Cookies').price, 1),
         status: "canceled",
-        mealTime: "dinner",
-        pickUpDateTime: getDateInFuture('dinner', 2),
-        dateCreated: new Date(),
-        dateUpdate: new Date()
+        meal_time: "dinner",
+        order_due_datetime: getDateInFuture('dinner', 2),
+        date_created: new Date(),
+        date_updated: new Date()
     }
 );
 
 db.producer.updateOne(
     {
-        firstName: 'Jenna'
+        first_name: 'Jenna'
     },
     {
-        $push: {archivedOrders: objId1}
+        $push: {archived_orders: objId1}
     }
 );
 
 db.consumer.updateOne(
     {
-        firstName: 'Antony'
+        first_name: 'Antony'
     },
     {
-        $push: {archivedOrders: objId2 }
+        $push: {archived_orders: objId2 }
     }
 );
 
