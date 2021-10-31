@@ -64,23 +64,6 @@ db.producer.insertOne(
     }
 );
 
-// Creating reviews for Jenna
-db.review_for_producer.insertMany([
-    {
-        "producerId": objId, 
-        "rating": Double(5.00),
-        // Reviews bounded to 300 characters
-        "description": "Jenna creates amazing cookies! Perfect for weekends.",
-    },
-    {
-        "producerId": objId, 
-        "rating": Double(4.50),
-        // Reviews bounded to 300 characters
-        "description": "Cute packaging!",
-    }
-]);
-
-
 /********************************************************************** */
 // Bob's Producer Document
 /********************************************************************** */
@@ -143,20 +126,6 @@ db.producer.insertOne(
         date_updated: new Date()
     }
 );
-
-db.review_for_producer.insertMany([
-    {
-        "producerId": objId,
-        "rating": Double(3.00),
-        "description": "Service was okay, not excellent. Food was good"
-    },
-    {
-        "producerId": objId,
-        "rating": Double(1.00),
-        "description": "COLD FOOD, WTF"
-    }
-])
-
 
 /********************************************************************** */
 // Sullivan's food
