@@ -11,8 +11,8 @@ while (foodCursor.hasNext()) {
    printjson(foodCursor.next());
 }
 
-// Get food documents with a prouducerId of objId 
-var foodCursor = db.food.find({producerId: objId})
+// Get food documents with a prouducer_id of objId 
+var foodCursor = db.food_item.find({producer_id: objId})
 
 // Create an array with foodIds 
 var arrayOfFoodIDS = foodCursor.map( function(myDoc) {
@@ -22,16 +22,20 @@ var arrayOfFoodIDS = foodCursor.map( function(myDoc) {
 
 // Sets the value of the food field to  arrayOfFoodIDS
 db.producer.updateOne(
-    {_id: producerDocument._id},
-     {$set: 
-        {food: arrayOfFoodIDS} 
+    {
+        _id: producerDocument._id
+    },
+    {
+        $set: { food_items: arrayOfFoodIDS } 
     }
 )
 
 db.producer.updateOne(
-    {firstName: "Marietta"},
-     {$set: 
-        {food: []} 
+    {
+        first_name: "Marietta"
+    },
+    {
+        $set: { food_items: [] } 
     }
 )
 
@@ -42,4 +46,4 @@ var arrayOfProduccerIDS = producerCursor.map( function(myDoc) {
 );
 
 // Gets one document that be accessed like an object. E.g., produerDocument.firstName
-var producerDocument = db.producer.findOne({firstName: 'Marietta'})
+var producerDocument = db.producer.findOne({ first_name: "Marietta" })

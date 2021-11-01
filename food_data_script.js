@@ -1,7 +1,7 @@
 db.food_item.deleteMany({});
 
 var foodItemDocument = db.producer.findOne({
-    first_name: 'Jenna'
+    first_name: "Jenna"
 })
 
 // Jenna's food_item
@@ -11,11 +11,12 @@ db.food_item.insertMany([
         diet_preference: "Vegan",
         description: "Blueberry Cookie",
         photo: "N/A",
-        price: 55,
+        price: Double(1.49),
         rating: 0,    
         name: "Jenna's Vegan Blueberry Cookies",
         portion_size: 1.4,
         spicy: 0,
+        allergy: ["Gluten"],
         date_created: new Date(),
         date_updated: new Date(),
     },
@@ -24,18 +25,33 @@ db.food_item.insertMany([
         diet_preference: "Vegan",
         description: "Chocolate Chip Cookie",
         photo: "N/A",
-        price: 55,
+        price: Double(1.99),
         rating: 0,    
         name: "Jenna's Vegan Chocolate Chip Cookies",
         portion_size: 1.5,
         spicy: 0,
+        allergy: ["Gluten"],
+        date_created: new Date(),
+        date_updated: new Date()
+    },
+    {
+        producer_id: foodItemDocument._id,
+        diet_preference: "Vegan",
+        description: "Vegan Meat Balls, very tasty and real like.",
+        photo: "N/A",
+        price: Double(9.99),
+        rating: 0,    
+        name: "Jenna's Vegan Meat Balls",
+        portion_size: 5.5,
+        spicy: 0,
+        allergy: ["Wheat"],
         date_created: new Date(),
         date_updated: new Date()
     }
 ]);
 
 // Get food documents with a prouducerId of Jenna's _id 
-var foodItemCursor = db.food_item.find({producer_id: foodItemDocument._id});
+var foodItemCursor = db.food_item.find({ producer_id: foodItemDocument._id });
 
 // Create an array with Food docuements _id 
 var arrayOfFoodIDS = foodItemCursor.map( function(myDoc) {
@@ -45,7 +61,9 @@ var arrayOfFoodIDS = foodItemCursor.map( function(myDoc) {
 
 // Sets the value of the food field, in the producer, to arrayOfFoodIDS
 db.producer.updateOne(
-    {_id: foodItemDocument._id},
+    {
+        _id: foodItemDocument._id
+    },
     {
         $set: {
             food_items: arrayOfFoodIDS,
@@ -74,11 +92,12 @@ db.food_item.insertMany([
         diet_preference: "N/A",
         description: "Freshly grown meat from neighboring farm",
         photo: "N/A",
-        price: 600,
+        price: Double(6.00),
         rating: 0,    
         name: "Bob's Burgers",
         portion_size: 5,
-        spicy: "1",
+        spicy: 1,
+        allergy: ["gluten"],
         date_created: new Date(),
         date_updated: new Date()
     },
@@ -87,17 +106,18 @@ db.food_item.insertMany([
         diet_preference: "N/A",
         description: "Homegrown potatoes!",
         photo: "N/A",
-        price: 445,
+        price: Double(4.45),
         rating: 0,    
         name: "Bob's Freshest Fries",
         portion_size: 3,
         spicy: 0,
+        allergy: [],
         date_created: new Date(),
         date_updated: new Date()
     }
 ]);
 
-foodItemCursor = db.food_item.find({producer_id: foodItemDocument._id});
+foodItemCursor = db.food_item.find({ producer_id: foodItemDocument._id });
 
 arrayOfFoodIDS = foodItemCursor.map( function(myDoc) {
         return myDoc._id
@@ -105,7 +125,9 @@ arrayOfFoodIDS = foodItemCursor.map( function(myDoc) {
 ).toArray();
 
 db.producer.updateOne(
-    {_id: foodItemDocument._id},
+    {
+        _id: foodItemDocument._id
+    },
     {
         $set: {
             food_items: arrayOfFoodIDS,
@@ -128,7 +150,7 @@ db.producer.updateOne(
 // Mariettas's food
 /********************************************************************** */
 var foodItemDocument = db.producer.findOne({
-    first_name: 'Marietta'
+    first_name: "Marietta"
 })
 
 db.food_item.insertMany([
@@ -137,12 +159,12 @@ db.food_item.insertMany([
         diet_preference: "N/A",
         description: "Tacos",
         photo: "N/A",
-        price: 345,
+        price: Double(3.45),
         rating: 0,    
         name: "Tacos",
         portion_size: 1.4,
         spicy: 2,
-        allergy: ['Soy', 'Wheat'],
+        allergy: ["Soy", "Wheat"],
         date_created: new Date(),
         date_updated: new Date()
     },
@@ -151,12 +173,12 @@ db.food_item.insertMany([
         diet_preference: "N/A",
         description: "Peanut Butter Jelly",
         photo: "N/A",
-        price: 245,
+        price: Double(2.45),
         rating: 0,    
         name: "Peanut Butter Jeally",
         portion_size: 1.8,
         spicy: 0,
-        allergy: ['Peanut Butter', 'Dairy', 'Soy'],
+        allergy: ["Peanut Butter", "Dairy", "Soy"],
         date_created: new Date(),
         date_updated: new Date()
     },
@@ -165,7 +187,7 @@ db.food_item.insertMany([
         diet_preference: "N/A",
         description: "Ramen",
         photo: "N/A",
-        price: 145,
+        price: Double(1.45),
         rating: 0,    
         name: "Ramen",
         portion_size: 3.2,
@@ -179,19 +201,19 @@ db.food_item.insertMany([
         diet_preference: "N/A",
         description: "Apple or Pumpkin flavor",
         photo: "N/A",
-        price: 525,
+        price: Double(5.25),
         rating: 0,    
         name: "Pie",
         portion_size: 3,
         spicy: 0,
-        allergy: ['Dairy', 'Soy'],
+        allergy: ["Dairy", "Soy"],
         date_created: new Date(),
         date_updated: new Date()
     },
 ]);
 
 // Get food documents with a prouducerId of Marietta's _id 
-foodItemCursor = db.food_item.find({producer_id: foodItemDocument._id});
+foodItemCursor = db.food_item.find({ producer_id: foodItemDocument._id });
 
 // Create an array with Food docuements _id 
 arrayOfFoodIDS = foodItemCursor.map( function(myDoc) {
@@ -201,7 +223,9 @@ arrayOfFoodIDS = foodItemCursor.map( function(myDoc) {
 
 // Sets the value of the food field, in the producer, to arrayOfFoodIDS
 db.producer.updateOne(
-    {_id: foodItemDocument._id},
+    {
+        _id: foodItemDocument._id
+    },
     {
         $set: {
             food_items: arrayOfFoodIDS,
