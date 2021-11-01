@@ -9,18 +9,18 @@ var objId = ObjectId();
 db.producer.insertOne(
     {
         _id: objId,
-        first_name: 'Jenna',
-        last_name: 'Smith',    
-        phone_num: '8157657895',
+        first_name: "Jenna",
+        last_name: "Smith",    
+        phone_num: "8157657895",
         address: {
-            street: '456 Dogwood Ln',
-            city: 'DeKalb',
-            state: 'IL',
-            zip: '60115'
+            street: "456 Dogwood Ln",
+            city: "DeKalb",
+            state: "IL",
+            zip_code: "60115"
         },
-        food: [],
+        food_items: [],
         average_producer_rating: Double(0.00),
-        current_orders: [],
+        active_orders: [],
         archived_orders: [],
         menu: {
             sunday: {
@@ -79,11 +79,11 @@ db.producer.insertOne(
             street: "200 E Garden St",
             city: "DeKalb",
             state: "IL",
-            zip: "60115"
+            zip_code: "60115"
         },
-        food: [],
+        food_items: [],
         average_producer_rating: Double(5.00),
-        current_orders: [],
+        active_orders: [],
         archived_orders: [],
         menu: {
             sunday: {
@@ -142,11 +142,11 @@ db.producer.insertOne(
           street: "403 S 6th St",
           city: "DeKalb",
           state: "IL",
-          zip: "60115"
+          zip_code: "60115"
         },
-        food: [],
+        food_items: [],
         average_producer_rating: Double(0.00),
-        current_orders: [],
+        active_orders: [],
         archived_orders: [],
         menu: {
             sunday: {
@@ -206,11 +206,11 @@ db.producer.insertOne(
             street: "736 Seaman Ave",
             city: "DeKalb",
             state: "IL",
-            zip: "60115"
+            zip_code: "60115"
         },
-        food: [],
+        food_items: [],
         average_producer_rating: Double(0.00),
-        current_orders: [],
+        active_orders: [],
         archived_orders: [],
         menu: {
             sunday: {
@@ -253,3 +253,29 @@ db.producer.insertOne(
         date_updated: new Date()
     }
 );
+
+// Producer Document Example
+// {
+//     "first_name": "Bob",
+//     "last_name": "Smith",    
+//     "phone_num": "8157657895",
+//     "address": {
+//         "street": "456 Dogwood Ln",
+//         "city": "DeKalb",
+//         "state": "IL",
+//         "zip_code": "60115"
+//     },
+//     "food_items": [],
+//     "average_producer_rating": 5.00,
+//     "active_orders": [],
+//     "archived_orders": [],
+//     "menu": {
+//         "sunday": [],
+//         "monday": [],
+//         "tuesday": [],
+//         "wednesday": [],
+//         "thursday": [],
+//         "friday": [],
+//         "saturday": [] 
+//     }
+// }  

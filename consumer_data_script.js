@@ -4,22 +4,23 @@ db.consumer.deleteMany({});
 // Juan's Consumer Document
 /********************************************************************** */
 db.consumer.insertOne(
-{
-    firstName: 'Juan',
-    lastName: 'Lopez',    
-    phoneNum: '815-789-0123',
-    address: {
-        street: '656 Glidden Ave',
-        city: 'DeKalb',
-        state: 'IL',
-        zip: '60115'
-    },
-    averageConsumerRating: 0,
-    currentOrders: [],
-    archivedOrders: [],
-    dateCreated: new Date(),
-    dateUpdated: new Date()
-});
+    {
+        first_name: "Juan",
+        last_name: "Lopez",    
+        phone_num: "8157890123",
+        address: {
+            street: "656 Glidden Ave",
+            city: "DeKalb",
+            state: "IL",
+            zip_code: "60115"
+        },
+        average_consumer_rating: Double(0.00),
+        active_orders: [],
+        archived_orders: [],
+        date_created: new Date(),
+        date_updated: new Date()
+    }
+);
 
 
 /********************************************************************** */
@@ -27,20 +28,20 @@ db.consumer.insertOne(
 /********************************************************************** */
 db.consumer.insertOne(    
     {
-        firstName: 'Gio',
-        lastName: 'Gonzalez',    
-        phoneNum: '815-709-0123',
+        first_name: "Gio",
+        last_name: "Gonzalez",    
+        phone_num: "8157090123",
         address: {
-            street: '60 N Nina St',
-            city: 'Cortland',
-            state: 'IL',
-            zip: '60112'
+            street: "60 N Nina St",
+            city: "Cortland",
+            state: "IL",
+            zip_code: "60112"
         },
-        averageConsumerRating: 0,
-        currentOrders: [],
-        archivedOrders: [],
-        dateCreated: new Date(),
-        dateUpdated: new Date()
+        average_consumer_rating: Double(0.00),
+        active_orders: [],
+        archived_orders: [],
+        date_created: new Date(),
+        date_updated: new Date()
     }
 );
 
@@ -49,20 +50,20 @@ db.consumer.insertOne(
 /********************************************************************** */
 db.consumer.insertOne(    
     {
-        firstName: 'Jose',
-        lastName: 'Hernandez',    
-        phoneNum: '815-709-6489',
+        first_name: "Jose",
+        last_name: "Hernandez",    
+        phone_num: "8157096489",
         address: {
-            street: '26 N Nina St',
-            city: 'Cortland',
-            state: 'IL',
-            zip: '60112'
+            street: "26 N Nina St",
+            city: "Cortland",
+            state: "IL",
+            zip_code: "60112"
         },
-        averageConsumerRating: 0,
-        currentOrders: [],
-        archivedOrders: [],
-        dateCreated: new Date(),
-        dateUpdated: new Date()
+        average_consumer_rating: Double(0.00),
+        active_orders: [],
+        archived_orders: [],
+        date_created: new Date(),
+        date_updated: new Date()
     }
 );
 
@@ -71,20 +72,20 @@ db.consumer.insertOne(
 /********************************************************************** */
 db.consumer.insertOne(    
     {
-        firstName: 'Octovio',
-        lastName: 'Ramirez',    
-        phoneNum: '815-819-6927',
+        first_name: "Octovio",
+        last_name: "Ramirez",    
+        phone_num: "8158196927",
         address: {
-            street: '306 W Hillcrest Dr',
-            city: 'DeKalb',
-            state: 'IL',
-            zip: '60115'
+            street: "306 W Hillcrest Dr",
+            city: "DeKalb",
+            state: "IL",
+            zip_code: "60115"
         },
-        averageConsumerRating: 0,
-        currentOrders: [],
-        archivedOrders: [],
-        dateCreated: new Date(),
-        dateUpdated: new Date()
+        average_consumer_rating: Double(0.00),
+        active_orders: [],
+        archived_orders: [],
+        date_created: new Date(),
+        date_updated: new Date()
     }
 );
 
@@ -93,19 +94,19 @@ db.consumer.insertOne(
 /********************************************************************** */
 db.consumer.insertOne(
     {
-        firstName: 'Antony',
-        lastName: 'Marc',    
-        phoneNum: '815-900-4797',
+        first_name: "Antony",
+        last_name: "Marc",    
+        phone_num: "8159004797",
         address: {
-            street: '1490 Farmstead Ln',
-            city: 'Malta',
-            state: 'IL',
-            zip: '60115'
+            street: "1490 Farmstead Ln",
+            city: "Malta",
+            state: "IL",
+            zip_code: "60115"
         },
-        averageConsumerRating: 0,
-        currentOrders: [],
-        archivedOrders: [],
-        dateCreated: new Date(),
-        dateUpdated: new Date()
+        average_consumer_rating: Double(0.00),
+        active_orders: [],
+        archived_orders: [],
+        date_created: new Date(),
+        date_updated: new Date()
     }
 );

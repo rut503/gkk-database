@@ -1,54 +1,72 @@
-db.food.deleteMany({});
+db.food_item.deleteMany({});
 
-var foodDocument = db.producer.findOne({
-    firstName: 'Jenna'
+var foodItemDocument = db.producer.findOne({
+    first_name: "Jenna"
 })
 
-// Jenna's food
-db.food.insertMany([
+// Jenna's food_item
+db.food_item.insertMany([
     {
-        producerId: foodDocument._id,
-        dietPreference: "Vegan",
+        producer_id: foodItemDocument._id,
+        diet_preference: "Vegan",
         description: "Blueberry Cookie",
         photo: "N/A",
-        price: 55,
+        price: Double(1.49),
         rating: 0,    
         name: "Jenna's Vegan Blueberry Cookies",
-        portionSize: 1.4,
+        portion_size: 1.4,
         spicy: 0,
-        dateCreated: new Date(),
-        dateUpdated: new Date(),
+        allergy: ["Gluten"],
+        date_created: new Date(),
+        date_updated: new Date(),
     },
     {
-        producerId: foodDocument._id,
-        dietPreference: "Vegan",
+        producer_id: foodItemDocument._id,
+        diet_preference: "Vegan",
         description: "Chocolate Chip Cookie",
         photo: "N/A",
-        price: 55,
+        price: Double(1.99),
         rating: 0,    
         name: "Jenna's Vegan Chocolate Chip Cookies",
-        portionSize: 1.5,
+        portion_size: 1.5,
         spicy: 0,
-        dateCreated: new Date(),
-        dateUpdated: new Date()
+        allergy: ["Gluten"],
+        date_created: new Date(),
+        date_updated: new Date()
+    },
+    {
+        producer_id: foodItemDocument._id,
+        diet_preference: "Vegan",
+        description: "Vegan Meat Balls, very tasty and real like.",
+        photo: "N/A",
+        price: Double(9.99),
+        rating: 0,    
+        name: "Jenna's Vegan Meat Balls",
+        portion_size: 5.5,
+        spicy: 0,
+        allergy: ["Wheat"],
+        date_created: new Date(),
+        date_updated: new Date()
     }
 ]);
 
 // Get food documents with a prouducerId of Jenna's _id 
-var foodCursor = db.food.find({producerId: foodDocument._id});
+var foodItemCursor = db.food_item.find({ producer_id: foodItemDocument._id });
 
 // Create an array with Food docuements _id 
-var arrayOfFoodIDS = foodCursor.map( function(myDoc) {
+var arrayOfFoodIDS = foodItemCursor.map( function(myDoc) {
         return myDoc._id
     } 
 ).toArray();
 
 // Sets the value of the food field, in the producer, to arrayOfFoodIDS
 db.producer.updateOne(
-    {_id: foodDocument._id},
+    {
+        _id: foodItemDocument._id
+    },
     {
         $set: {
-            food: arrayOfFoodIDS,
+            food_items: arrayOfFoodIDS,
             "menu.sunday.breakfast": arrayOfFoodIDS,
             "menu.monday.breakfast": arrayOfFoodIDS,
             "menu.tuesday.breakfast": arrayOfFoodIDS,
@@ -56,7 +74,7 @@ db.producer.updateOne(
             "menu.thursday.breakfast": arrayOfFoodIDS,
             "menu.friday.breakfast": arrayOfFoodIDS,
             "menu.saturday.breakfast": arrayOfFoodIDS,
-            dateUpdated: new Date()
+            date_updated: new Date()
         } 
     }
 );
@@ -64,58 +82,62 @@ db.producer.updateOne(
 /********************************************************************** */
 // Bob's Food document
 /********************************************************************** */
-var foodDocument = db.producer.findOne({
-    firstName: 'Bob'
+var foodItemDocument = db.producer.findOne({
+    first_name: 'Bob'
 })
 
-db.food.insertMany([
+db.food_item.insertMany([
     {
-        producerId: foodDocument._id,
-        dietPreference: "N/A",
+        producer_id: foodItemDocument._id,
+        diet_preference: "N/A",
         description: "Freshly grown meat from neighboring farm",
         photo: "N/A",
-        price: 600,
+        price: Double(6.00),
         rating: 0,    
         name: "Bob's Burgers",
-        portionSize: 5,
-        spicy: "1",
-        dateCreated: new Date(),
-        dateUpdated: new Date()
+        portion_size: 5,
+        spicy: 1,
+        allergy: ["gluten"],
+        date_created: new Date(),
+        date_updated: new Date()
     },
     {
-        producerId: foodDocument._id,
-        dietPreference: "N/A",
+        producer_id: foodItemDocument._id,
+        diet_preference: "N/A",
         description: "Homegrown potatoes!",
         photo: "N/A",
-        price: 445,
+        price: Double(4.45),
         rating: 0,    
         name: "Bob's Freshest Fries",
-        portionSize: 3,
+        portion_size: 3,
         spicy: 0,
-        dateCreated: new Date(),
-        dateUpdated: new Date()
+        allergy: [],
+        date_created: new Date(),
+        date_updated: new Date()
     }
 ]);
 
-foodCursor = db.food.find({producerId: foodDocument._id});
+foodItemCursor = db.food_item.find({ producer_id: foodItemDocument._id });
 
-arrayOfFoodIDS = foodCursor.map( function(myDoc) {
+arrayOfFoodIDS = foodItemCursor.map( function(myDoc) {
         return myDoc._id
     } 
 ).toArray();
 
 db.producer.updateOne(
-    {_id: foodDocument._id},
+    {
+        _id: foodItemDocument._id
+    },
     {
         $set: {
-            food: arrayOfFoodIDS,
+            food_items: arrayOfFoodIDS,
             "menu.friday.lunch": arrayOfFoodIDS,
             "menu.friday.dinner": arrayOfFoodIDS,
             "menu.sunday.lunch": arrayOfFoodIDS,
             "menu.sunday.dinner": arrayOfFoodIDS,
             "menu.saturday.lunch": arrayOfFoodIDS,
             "menu.saturday.dinner": arrayOfFoodIDS,
-            dateUpdated: new Date()
+            date_updated: new Date()
         } 
     }
 );
@@ -127,92 +149,94 @@ db.producer.updateOne(
 /********************************************************************** */
 // Mariettas's food
 /********************************************************************** */
-var foodDocument = db.producer.findOne({
-    firstName: 'Marietta'
+var foodItemDocument = db.producer.findOne({
+    first_name: "Marietta"
 })
 
-db.food.insertMany([
+db.food_item.insertMany([
     {
-        producerId: foodDocument._id,
-        dietPreference: "N/A",
+        producer_id: foodItemDocument._id,
+        diet_preference: "N/A",
         description: "Tacos",
         photo: "N/A",
-        price: 345,
+        price: Double(3.45),
         rating: 0,    
         name: "Tacos",
-        portionSize: 1.4,
+        portion_size: 1.4,
         spicy: 2,
-        allergy: ['Soy', 'Wheat'],
-        dateCreated: new Date(),
-        dateUpdated: new Date()
+        allergy: ["Soy", "Wheat"],
+        date_created: new Date(),
+        date_updated: new Date()
     },
     {
-        producerId: foodDocument._id,
-        dietPreference: "N/A",
+        producer_id: foodItemDocument._id,
+        diet_preference: "N/A",
         description: "Peanut Butter Jelly",
         photo: "N/A",
-        price: 245,
+        price: Double(2.45),
         rating: 0,    
         name: "Peanut Butter Jeally",
-        portionSize: 1.8,
+        portion_size: 1.8,
         spicy: 0,
-        allergy: ['Peanut Butter', 'Dairy', 'Soy'],
-        dateCreated: new Date(),
-        dateUpdated: new Date()
+        allergy: ["Peanut Butter", "Dairy", "Soy"],
+        date_created: new Date(),
+        date_updated: new Date()
     },
     {
-        producerId: foodDocument._id,
-        dietPreference: "N/A",
+        producer_id: foodItemDocument._id,
+        diet_preference: "N/A",
         description: "Ramen",
         photo: "N/A",
-        price: 145,
+        price: Double(1.45),
         rating: 0,    
         name: "Ramen",
-        portionSize: 3.2,
+        portion_size: 3.2,
         spicy: 1,
         allergy: ['Soy'],
-        dateCreated: new Date(),
-        dateUpdated: new Date()
+        date_created: new Date(),
+        date_updated: new Date()
     },
     {
-        producerId: foodDocument._id,
-        dietPreference: "N/A",
+        producer_id: foodItemDocument._id,
+        diet_preference: "N/A",
         description: "Apple or Pumpkin flavor",
         photo: "N/A",
-        price: 525,
+        price: Double(5.25),
         rating: 0,    
         name: "Pie",
-        portionSize: 3,
+        portion_size: 3,
         spicy: 0,
-        allergy: ['Dairy', 'Soy'],
-        dateCreated: new Date(),
-        dateUpdated: new Date()
+        allergy: ["Dairy", "Soy"],
+        date_created: new Date(),
+        date_updated: new Date()
     },
 ]);
 
 // Get food documents with a prouducerId of Marietta's _id 
-foodCursor = db.food.find({producerId: foodDocument._id});
+foodItemCursor = db.food_item.find({ producer_id: foodItemDocument._id });
 
 // Create an array with Food docuements _id 
-arrayOfFoodIDS = foodCursor.map( function(myDoc) {
+arrayOfFoodIDS = foodItemCursor.map( function(myDoc) {
         return myDoc._id
     } 
 ).toArray();
 
 // Sets the value of the food field, in the producer, to arrayOfFoodIDS
 db.producer.updateOne(
-    {_id: foodDocument._id},
+    {
+        _id: foodItemDocument._id
+    },
     {
         $set: {
-            food: arrayOfFoodIDS,
-            dateUpdated: new Date()
+            food_items: arrayOfFoodIDS,
+            date_updated: new Date()
         } 
     }
 );
 
 db.producer.updateOne(
     {
-        _id: foodDocument._id
+        _id: foodItemDocument._id
     },
     {
         $push: {

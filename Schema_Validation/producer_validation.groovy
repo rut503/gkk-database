@@ -2,26 +2,26 @@
   $jsonSchema: {
     bsonType: 'object',
     required: [
-      'firstName',
-      'lastName',
-      'phoneNum',
+      'first_name',
+      'last_name',
+      'phone_num',
       'address',
-      'food',
-      'averageProducerRating',
+      'food_items',
+      'average_producer_rating',
       'menu',
-      'dateCreated',
-      'dateUpdated'
+      'date_created',
+      'date_updated'
     ],
     properties: {
-      firstName: {
+      first_name: {
         bsonType: 'string',
         description: 'first name of producer, must be a string'
       },
-      lastName: {
+      last_name: {
         bsonType: 'string',
         description: 'last name of producer, must be a string'
       },
-      phoneNum: {
+      phone_num: {
         bsonType: 'string',
         description: 'string format of producer\'s phone number'
       },
@@ -50,15 +50,15 @@
           }
         }
       },
-      food: {
+      food_items: {
         bsonType: 'array',
         description: 'contains the food id\'s of producers food'
       },
-      averageProducerRating: {
+      average_producer_rating: {
         bsonType: 'double',
         description: 'average rating for a producer'
       },
-      currentOrders: {
+      current_orders: {
         bsonType: 'array',
         description: 'Array of current orders',
         items: {
@@ -303,10 +303,10 @@
           }
         }
       },
-      dateCreated: {
+      date_created: {
         bsonType: 'date'
       },
-      dateUpdated: {
+      date_updated: {
         bsonType: 'date'
       }
     }
