@@ -6,23 +6,23 @@ const TAX_RATE = 0.0625;
 // Maps to store consumer, producer and food_item documents. 
 var consumerMap = new Map();
 var producerMap = new Map();
-var foodItemMap = new Map();
+// var foodItemMap = new Map();
 
 var consumerCursor = db.consumer.find({});
 var producerCursor = db.producer.find({});
-var foodCursor = db.food_item.find({});
+// var foodCursor = db.food_item.find({});
 
-foodCursor.forEach(function(myDoc){
-    foodItemMap.set(myDoc.name, myDoc);
+consumerCursor.forEach(function(myDoc){
+    consumerMap.set(myDoc.first_name, myDoc);
 });
 
 producerCursor.forEach(function(myDoc){
     producerMap.set(myDoc.first_name, myDoc);
 });
 
-consumerCursor.forEach(function(myDoc){
-    consumerMap.set(myDoc.first_name, myDoc);
-});
+// foodCursor.forEach(function(myDoc){
+//     foodItemMap.set(myDoc.name, myDoc);
+// });
 
 /********************************************************************** */
 // Juan's Order
@@ -222,7 +222,7 @@ db.active_order.insertMany(
             consumer_id: consumerMap.get("Jose")._id,
             producer_id: producerMap.get("Jenna")._id,    
             items: [{
-                food_item_id: {
+                food_item: {
                     diet_preference: "Vegan",
                     description: "Blueberry Cookie",
                     photo: "N/A",
@@ -248,7 +248,7 @@ db.active_order.insertMany(
             consumer_id: consumerMap.get("Jose")._id,
             producer_id: producerMap.get("Bob")._id,    
             items: [{
-                food_item_id: {
+                food_item: {
                     diet_preference: "N/A",
                     description: "Freshly grown meat from neighboring farm",
                     photo: "N/A",
@@ -274,7 +274,7 @@ db.active_order.insertMany(
             consumer_id: consumerMap.get("Jose")._id,
             producer_id: producerMap.get("Bob")._id,    
             items: [{
-                food_item_id: {
+                food_item: {
                     diet_preference: "N/A",
                     description: "Freshly grown meat from neighboring farm",
                     photo: "N/A",
@@ -338,7 +338,7 @@ db.archived_order.insertMany(
             consumer_id: consumerMap.get("Octovio")._id,
             producer_id: producerMap.get("Jenna")._id,    
             items: [{
-                food_item_id: {
+                food_item: {
                     diet_preference: "Vegan",
                     description: "Chocolate Chip Cookie",
                     photo: "N/A",
