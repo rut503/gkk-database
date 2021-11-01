@@ -53,11 +53,11 @@ db.active_order.insertMany(
                     quantity: 12
                 }
             ],
-            amount: getTotalOrderPrice(foodItemMap.get("Pie").price, 12),
+            amount: getTotalOrderPrice(5.25, 12),
             status: "producer pending",
             meal_time: "breakfast",
             order_due_datetime: getDateInFuture("breakfast", 1),
-            message_for_producer: "These better be great PB&Js too!!!",
+            message_for_producer: "These better be great Pies!!!",
             date_created: new Date(),
             date_updated: new Date()
         },
@@ -81,7 +81,7 @@ db.active_order.insertMany(
                     quantity: 24
                 }
             ],
-            amount: getTotalOrderPrice(foodItemMap.get("Peanut Butter Jeally").price, 24),
+            amount: getTotalOrderPrice(2.45, 24),
             status: "producer pending",
             meal_time: "breakfast",
             order_due_datetime: getDateInFuture("breakfast", 7),
@@ -137,7 +137,7 @@ db.active_order.insertMany(
                     quantity: 2
                 }
             ],
-            amount: getTotalOrderPrice(foodItemMap.get("Jenna's Vegan Blueberry Cookies").price, 2),
+            amount: getTotalOrderPrice(1.49, 2),
             status: "producer accepted",
             meal_time: "dinner",
             order_due_datetime: getDateInFuture("dinner", 6),
@@ -179,7 +179,7 @@ db.active_order.insertMany(
                     quantity: 5
                 }
             ],
-            amount: getTotalOrderPrice(foodItemMap.get("Jenna's Vegan Chocolate Chip Cookies").price, 2) + getTotalOrderPrice(foodItemMap.get("Jenna's Vegan Meat Balls").price, 5),
+            amount: getTotalOrderPrice(9.99, 2) + getTotalOrderPrice(1.99, 5),
             status: "producer accepted",
             meal_time: "dinner",
             order_due_datetime: getDateInFuture("dinner", 5),
@@ -235,7 +235,7 @@ db.active_order.insertMany(
                 }, 
                 quantity: 48
             }],
-            amount: getTotalOrderPrice(foodItemMap.get("Jenn's Vegan Blueberry Cookies").price, 48),
+            amount: getTotalOrderPrice(1.49, 48),
             status: "producer accepted",
             meal_time: "dinner",
             order_due_datetime: getDateInFuture("dinner", 2),
@@ -261,7 +261,7 @@ db.active_order.insertMany(
                 }, 
                 quantity: 2
             }],
-            amount: getTotalOrderPrice(foodItemMap.get("Bob's Burgers").price, 2),
+            amount: getTotalOrderPrice(6.00, 2),
             status: "producer accepted",
             meal_time: "lunch",
             order_due_datetime: getDateInFuture("lunch", 2),
@@ -287,7 +287,7 @@ db.active_order.insertMany(
                 },
                 quantity: 1
             }],
-            amount: getTotalOrderPrice(foodItemMap.get("Bob's Burgers").price, 1),
+            amount: getTotalOrderPrice(6.00, 1),
             status: "producer ready",
             meal_time: "breakfast",
             order_due_datetime: getDateInFuture("breakfast", 2),
@@ -351,7 +351,7 @@ db.archived_order.insertMany(
                 }, 
                 quantity: 6
             }],
-            amount: getTotalOrderPrice(foodItemMap.get("Jenna's Vegan Chocolate Chip Cookies").price, 6),
+            amount: getTotalOrderPrice(1.99, 6),
             status: "completed",
             meal_time: "dinner",
             order_due_datetime: getDateInFuture("dinner", 5),
@@ -377,7 +377,7 @@ db.archived_order.insertMany(
                 }, 
                 quantity: 7
             }],
-            amount: getTotalOrderPrice(foodItemMap.get("Bob's Burgers").price, 7),
+            amount: getTotalOrderPrice(6.00, 7),
             status: "completed",
             meal_time: "lunch",
             order_due_datetime: getDateInFuture("lunch", 3),
@@ -438,7 +438,7 @@ db.archived_order.insertOne(
             }, 
             quantity: 1
         }],
-        amount: getTotalOrderPrice(foodItemMap.get("Jenna's Vegan Chocolate Chip Cookies").price, 1),
+        amount: getTotalOrderPrice(1.99, 1),
         status: "canceled",
         meal_time: "dinner",
         order_due_datetime: getDateInFuture("dinner", 2),
