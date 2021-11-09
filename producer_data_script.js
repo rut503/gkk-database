@@ -19,7 +19,7 @@ db.producer.insertOne(
             zip_code: "60115"
         },
         food_items: [],
-        average_producer_rating: Double(0.00),
+        rating: Double(0.00),
         active_orders: [],
         archived_orders: [],
         menu: {
@@ -82,7 +82,7 @@ db.producer.insertOne(
             zip_code: "60115"
         },
         food_items: [],
-        average_producer_rating: Double(5.00),
+        rating: Double(5.00),
         active_orders: [],
         archived_orders: [],
         menu: {
@@ -145,7 +145,7 @@ db.producer.insertOne(
           zip_code: "60115"
         },
         food_items: [],
-        average_producer_rating: Double(0.00),
+        rating: Double(0.00),
         active_orders: [],
         archived_orders: [],
         menu: {
@@ -209,7 +209,7 @@ db.producer.insertOne(
             zip_code: "60115"
         },
         food_items: [],
-        average_producer_rating: Double(0.00),
+        rating: Double(0.00),
         active_orders: [],
         archived_orders: [],
         menu: {
@@ -266,7 +266,7 @@ db.producer.insertOne(
 //         "zip_code": "60115"
 //     },
 //     "food_items": [],
-//     "average_producer_rating": 5.00,
+//     "rating": 5.00,
 //     "active_orders": [],
 //     "archived_orders": [],
 //     "menu": {

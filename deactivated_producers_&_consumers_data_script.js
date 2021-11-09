@@ -19,7 +19,7 @@ db.deactivated_producer.insertOne(
             zip_code: "60115"
         },
         food_items: [],
-        average_producer_rating: Double(0.00),
+        rating: Double(0.00),
         active_orders: [],
         archived_orders: [],
         menu: {
@@ -82,7 +82,7 @@ db.deactivated_producer.insertOne(
             zip_code: "60115"
         },
         food_items: [],
-        average_producer_rating: Double(5.00),
+        rating: Double(5.00),
         active_orders: [],
         archived_orders: [],
         menu: {
@@ -141,7 +141,7 @@ db.deactivated_consumer.insertOne(
             state: "IL",
             zip_code: "60115"
         },
-        average_consumer_rating: Double(0.00),
+        rating: Double(0.00),
         active_orders: [],
         archived_orders: [],
         date_created: new Date(),
@@ -163,7 +163,7 @@ db.deactivated_consumer.insertOne(
             state: "IL",
             zip_code: "60115"
         },
-        average_consumer_rating: Double(0.00),
+        rating: Double(0.00),
         active_orders: [],
         archived_orders: [],
         date_created: new Date(),

@@ -14,7 +14,7 @@ db.consumer.insertOne(
             state: "IL",
             zip_code: "60115"
         },
-        average_consumer_rating: Double(0.00),
+        rating: Double(0.00),
         active_orders: [],
         archived_orders: [],
         date_created: new Date(),
@@ -37,7 +37,7 @@ db.consumer.insertOne(
             state: "IL",
             zip_code: "60112"
         },
-        average_consumer_rating: Double(0.00),
+        rating: Double(0.00),
         active_orders: [],
         archived_orders: [],
         date_created: new Date(),
@@ -59,7 +59,7 @@ db.consumer.insertOne(
             state: "IL",
             zip_code: "60112"
         },
-        average_consumer_rating: Double(0.00),
+        rating: Double(0.00),
         active_orders: [],
         archived_orders: [],
         date_created: new Date(),
@@ -81,7 +81,7 @@ db.consumer.insertOne(
             state: "IL",
             zip_code: "60115"
         },
-        average_consumer_rating: Double(0.00),
+        rating: Double(0.00),
         active_orders: [],
         archived_orders: [],
         date_created: new Date(),
@@ -103,7 +103,7 @@ db.consumer.insertOne(
             state: "IL",
             zip_code: "60115"
         },
-        average_consumer_rating: Double(0.00),
+        rating: Double(0.00),
         active_orders: [],
         archived_orders: [],
         date_created: new Date(),
