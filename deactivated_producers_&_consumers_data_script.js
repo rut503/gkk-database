@@ -11,7 +11,7 @@ db.deactivated_producer.insertOne(
         _id: objId,
         first_name: "Rita",
         last_name: "Shah",    
-        phone_num: "5849822205",
+        phone_number: "5849822205",
         address: {
             street: "443 Wood Ln",
             city: "DeKalb",
@@ -74,7 +74,7 @@ db.deactivated_producer.insertOne(
         _id: objId,
         first_name: "Lance",
         last_name: "Law",    
-        phone_num: "4839540129",
+        phone_number: "4839540129",
         address: {
             street: "323 W Turn St",
             city: "DeKalb",
@@ -134,7 +134,7 @@ db.deactivated_consumer.insertOne(
     {
         first_name: "Tony",
         last_name: "Sharks",    
-        phone_num: "8599911192",
+        phone_number: "8599911192",
         address: {
             street: "55 Wheat Ln",
             city: "Hoofer",
@@ -156,7 +156,7 @@ db.deactivated_consumer.insertOne(
     {
         first_name: "Shayer",
         last_name: "Mitt",    
-        phone_num: "2948544493",
+        phone_number: "2948544493",
         address: {
             street: "339 Idol Ln",
             city: "Menroe",
