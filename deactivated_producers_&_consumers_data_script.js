@@ -21,7 +21,6 @@ db.deactivated_producer.insertOne(
         food_items: [],
         rating: Double(0.00),
         active_orders: [],
-        archived_orders: [],
         menu: {
             sunday: {
                 breakfast: [],
@@ -84,7 +83,6 @@ db.deactivated_producer.insertOne(
         food_items: [],
         rating: Double(5.00),
         active_orders: [],
-        archived_orders: [],
         menu: {
             sunday: {
                 breakfast: [],
@@ -143,7 +141,6 @@ db.deactivated_consumer.insertOne(
         },
         rating: Double(0.00),
         active_orders: [],
-        archived_orders: [],
         date_created: new Date(),
         date_updated: new Date()
     }
@@ -165,7 +162,6 @@ db.deactivated_consumer.insertOne(
         },
         rating: Double(0.00),
         active_orders: [],
-        archived_orders: [],
         date_created: new Date(),
         date_updated: new Date()
     }

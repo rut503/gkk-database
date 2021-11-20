@@ -16,7 +16,6 @@ db.consumer.insertOne(
         },
         rating: Double(0.00),
         active_orders: [],
-        archived_orders: [],
         date_created: new Date(),
         date_updated: new Date()
     }
@@ -39,7 +38,6 @@ db.consumer.insertOne(
         },
         rating: Double(0.00),
         active_orders: [],
-        archived_orders: [],
         date_created: new Date(),
         date_updated: new Date()
     }
@@ -61,7 +59,6 @@ db.consumer.insertOne(
         },
         rating: Double(0.00),
         active_orders: [],
-        archived_orders: [],
         date_created: new Date(),
         date_updated: new Date()
     }
@@ -83,7 +80,6 @@ db.consumer.insertOne(
         },
         rating: Double(0.00),
         active_orders: [],
-        archived_orders: [],
         date_created: new Date(),
         date_updated: new Date()
     }
@@ -105,7 +101,6 @@ db.consumer.insertOne(
         },
         rating: Double(0.00),
         active_orders: [],
-        archived_orders: [],
         date_created: new Date(),
         date_updated: new Date()
     }

@@ -21,7 +21,6 @@ db.producer.insertOne(
         food_items: [],
         rating: Double(0.00),
         active_orders: [],
-        archived_orders: [],
         menu: {
             sunday: {
                 breakfast: [],
@@ -84,7 +83,6 @@ db.producer.insertOne(
         food_items: [],
         rating: Double(5.00),
         active_orders: [],
-        archived_orders: [],
         menu: {
             sunday: {
                 breakfast: [],
@@ -147,7 +145,6 @@ db.producer.insertOne(
         food_items: [],
         rating: Double(0.00),
         active_orders: [],
-        archived_orders: [],
         menu: {
             sunday: {
                 breakfast: [],
@@ -211,7 +208,6 @@ db.producer.insertOne(
         food_items: [],
         rating: Double(0.00),
         active_orders: [],
-        archived_orders: [],
         menu: {
             sunday: {
                 breakfast: [],
@@ -268,7 +264,6 @@ db.producer.insertOne(
 //     "food_items": [],
 //     "rating": 5.00,
 //     "active_orders": [],
-//     "archived_orders": [],
 //     "menu": {
 //         "sunday": [],
 //         "monday": [],
