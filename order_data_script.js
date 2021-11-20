@@ -388,32 +388,6 @@ db.archived_order.insertMany(
     ]
 );
 
-db.producer.updateOne(
-    {
-        first_name: "Jenna"
-    },
-    {
-        $push: {archived_orders: objId1 }
-    }
-);
-db.producer.updateOne(
-    {
-        first_name: "Bob"
-    },
-    {
-        $push: {archived_orders: objId2}
-    }
-);
-
-db.consumer.updateOne(
-    {
-        first_name: "Octovio"
-    },
-    {
-        $push: {archived_orders: { $each: [ objId1, objId2 ] } }
-    }
-);
-
 /********************************************************************** */
 // Antony's Order
 /********************************************************************** */
@@ -448,23 +422,6 @@ db.archived_order.insertOne(
     }
 );
 
-db.producer.updateOne(
-    {
-        first_name: "Jenna"
-    },
-    {
-        $push: {archived_orders: objId1}
-    }
-);
-
-db.consumer.updateOne(
-    {
-        first_name: "Antony"
-    },
-    {
-        $push: {archived_orders: objId2 }
-    }
-);
 
 /********************************************************************** */
 // Helper Functions
