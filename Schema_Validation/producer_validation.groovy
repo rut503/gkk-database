@@ -8,6 +8,7 @@
       'address',
       'food_items',
       'rating',
+      'active_orders',
       'menu',
       'date_created',
       'date_updated'
