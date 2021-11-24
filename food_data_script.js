@@ -8,9 +8,9 @@ var foodItemDocument = db.producer.findOne({
 db.food_item.insertMany([
     {
         producer_id: foodItemDocument._id,
-        diet_preference: "Vegan",
+        diet_preference: ["Vegan"],
         description: "Blueberry Cookie",
-        photo: "N/A",
+        photo: "http://www.rut.com",
         price: Double(1.49),
         rating: Double(0.00),    
         name: "Jenna's Vegan Blueberry Cookies",
@@ -22,9 +22,9 @@ db.food_item.insertMany([
     },
     {
         producer_id: foodItemDocument._id,
-        diet_preference: "Vegan",
+        diet_preference: ["Vegan"],
         description: "Chocolate Chip Cookie",
-        photo: "N/A",
+        photo: "https://rut.com",
         price: Double(1.99),
         rating: Double(0.00),    
         name: "Jenna's Vegan Chocolate Chip Cookies",
@@ -36,9 +36,9 @@ db.food_item.insertMany([
     },
     {
         producer_id: foodItemDocument._id,
-        diet_preference: "Vegan",
+        diet_preference: ["Vegan"],
         description: "Vegan Meat Balls, very tasty and real like.",
-        photo: "N/A",
+        photo: "https://rut.in/hello/query=\"hello\"&rating=4",
         price: Double(9.99),
         rating: Double(0.00),    
         name: "Jenna's Vegan Meat Balls",
@@ -89,9 +89,9 @@ var foodItemDocument = db.producer.findOne({
 db.food_item.insertMany([
     {
         producer_id: foodItemDocument._id,
-        diet_preference: "N/A",
+        diet_preference: ["Non-Vegetarian", "High Protein"],
         description: "Freshly grown meat from neighboring farm",
-        photo: "N/A",
+        photo: "https://www.photos.uk/mypic",
         price: Double(6.00),
         rating: Double(0.00),    
         name: "Bob's Burgers",
@@ -103,9 +103,9 @@ db.food_item.insertMany([
     },
     {
         producer_id: foodItemDocument._id,
-        diet_preference: "N/A",
+        diet_preference: ["Low Carb"],
         description: "Homegrown potatoes!",
-        photo: "N/A",
+        photo: "http://www.photos.com/yourpic/id=\"49379843\"",
         price: Double(4.45),
         rating: Double(0.00),    
         name: "Bob's Freshest Fries",
@@ -156,9 +156,9 @@ var foodItemDocument = db.producer.findOne({
 db.food_item.insertMany([
     {
         producer_id: foodItemDocument._id,
-        diet_preference: "N/A",
+        diet_preference: ["Nut Free", "Vegetarian"],
         description: "Tacos",
-        photo: "N/A",
+        photo: "https://www.photos.com/tacos",
         price: Double(3.45),
         rating: Double(0.00),    
         name: "Tacos",
@@ -170,9 +170,9 @@ db.food_item.insertMany([
     },
     {
         producer_id: foodItemDocument._id,
-        diet_preference: "N/A",
+        diet_preference: ["High Protein", "Vegetarian"],
         description: "Peanut Butter Jelly",
-        photo: "N/A",
+        photo: "https://phootos.com/PB&J",
         price: Double(2.45),
         rating: Double(0.00),    
         name: "Peanut Butter Jeally",
@@ -184,9 +184,9 @@ db.food_item.insertMany([
     },
     {
         producer_id: foodItemDocument._id,
-        diet_preference: "N/A",
+        diet_preference: ["Vegetarian"],
         description: "Ramen",
-        photo: "N/A",
+        photo: "https://www.photos.us/reman",
         price: Double(1.45),
         rating: Double(0.00),    
         name: "Ramen",
@@ -198,9 +198,9 @@ db.food_item.insertMany([
     },
     {
         producer_id: foodItemDocument._id,
-        diet_preference: "N/A",
+        diet_preference: ["Vegetarian"],
         description: "Apple or Pumpkin flavor",
-        photo: "N/A",
+        photo: "https://www.photos.com/pieeee",
         price: Double(5.25),
         rating: Double(0.00),    
         name: "Pie",
