@@ -39,22 +39,20 @@ db.active_order.insertMany(
             producer_id: producerMap.get("Marietta")._id,
             items: [
                 {
-                    food_item: {
-                        diet_preference: "N/A",
-                        description: "Apple or Pumpkin flavor",
-                        photo: "N/A",
-                        price: Double(5.25),
-                        rating: 0,    
-                        name: "Pie",
-                        portion_size: 3,
-                        spicy: 0,
-                        allergy: ["Dairy", "Soy"]
-                    },
+                    diet_preference: ["Vegetarian"],
+                    description: "Apple or Pumpkin flavor",
+                    photo: "http://rut.com",
+                    price: Double(5.25),
+                    rating: Double(0),    
+                    name: "Pie",
+                    portion_size: 3,
+                    spicy: 0,
+                    allergy: ["Dairy", "Soy"],
                     quantity: 12
                 }
             ],
             total_price: getTotalOrderPrice(5.25, 12),
-            status: "producer pending",
+            status: "pending",
             meal_time: "breakfast",
             order_due_datetime: getDateInFuture("breakfast", 1),
             message_for_producer: "These better be great Pies!!!",
@@ -67,22 +65,20 @@ db.active_order.insertMany(
             producer_id: producerMap.get("Marietta")._id,
             items:[
                 {
-                    food_item: {
-                        diet_preference: "N/A",
-                        description: "Peanut Butter Jelly",
-                        photo: "N/A",
-                        price: Double(2.45),
-                        rating: 0,    
-                        name: "Peanut Butter Jeally",
-                        portion_size: 1.8,
-                        spicy: 0,
-                        allergy: ["Peanut Butter", "Dairy", "Soy"]
-                    },
+                    diet_preference: ["High Protein", "Vegetarian"],
+                    description: "Peanut Butter Jelly",
+                    photo: "http://rut.com",
+                    price: Double(2.45),
+                    rating: Double(0),    
+                    name: "Peanut Butter Jeally",
+                    portion_size: 1.8,
+                    spicy: 0,
+                    allergy: ["Peanut Butter", "Dairy", "Soy"],
                     quantity: 24
                 }
             ],
             total_price: getTotalOrderPrice(2.45, 24),
-            status: "producer pending",
+            status: "pending",
             meal_time: "breakfast",
             order_due_datetime: getDateInFuture("breakfast", 7),
             message_for_producer: "These better be great PB&Js too!!!",
@@ -123,22 +119,20 @@ db.active_order.insertMany(
             producer_id: producerMap.get("Jenna")._id,    
             items: [
                 {
-                    food_item: {
-                        diet_preference: "Vegan",
-                        description: "Blueberry Cookie",
-                        photo: "N/A",
-                        price: Double(1.49),
-                        rating: 0,    
-                        name: "Jenna's Vegan Blueberry Cookies",
-                        portion_size: 1.4,
-                        spicy: 0,
-                        allergy: ["Gluten"]
-                    }, 
+                    diet_preference: ["Vegan"],
+                    description: "Blueberry Cookie",
+                    photo: "http://rut.com",
+                    price: Double(1.49),
+                    rating: Double(0),    
+                    name: "Jenna's Vegan Blueberry Cookies",
+                    portion_size: 1.4,
+                    spicy: 0,
+                    allergy: ["Gluten"],
                     quantity: 2
                 }
             ],
             total_price: getTotalOrderPrice(1.49, 2),
-            status: "producer accepted",
+            status: "accepted",
             meal_time: "dinner",
             order_due_datetime: getDateInFuture("dinner", 6),
             message_for_producer: "Make em sweet af!!!",
@@ -151,36 +145,32 @@ db.active_order.insertMany(
             producer_id: producerMap.get("Jenna")._id,    
             items: [
                 {
-                    food_item: {
-                        diet_preference: "Vegan",
-                        description: "Vegan Meat Balls, very tasty and real like.",
-                        photo: "N/A",
-                        price: Double(9.99),
-                        rating: 0,    
-                        name: "Jenna's Vegan Meat Balls",
-                        portion_size: 5.5,
-                        spicy: 0,
-                        allergy: ["Wheat"]
-                    }, 
+                    diet_preference: ["Vegan"],
+                    description: "Vegan Meat Balls, very tasty and real like.",
+                    photo: "http://rut.com",
+                    price: Double(9.99),
+                    rating: Double(0),    
+                    name: "Jenna's Vegan Meat Balls",
+                    portion_size: 5.5,
+                    spicy: 0,
+                    allergy: ["Wheat"],
                     quantity: 2
                 },
                 {
-                    food_item: {
-                        diet_preference: "Vegan",
-                        description: "Chocolate Chip Cookie",
-                        photo: "N/A",
-                        price: Double(1.99),
-                        rating: 0,    
-                        name: "Jenna's Vegan Chocolate Chip Cookies",
-                        portion_size: 1.5,
-                        spicy: 0,
-                        allergy: ["Gluten"]
-                    }, 
+                    diet_preference: ["Vegan"],
+                    description: "Chocolate Chip Cookie",
+                    photo: "http://rut.com",
+                    price: Double(1.99),
+                    rating: Double(0),    
+                    name: "Jenna's Vegan Chocolate Chip Cookies",
+                    portion_size: 1.5,
+                    spicy: 0,
+                    allergy: ["Gluten"],
                     quantity: 5
                 }
             ],
             total_price: getTotalOrderPrice(9.99, 2) + getTotalOrderPrice(1.99, 5),
-            status: "producer accepted",
+            status: "accepted",
             meal_time: "dinner",
             order_due_datetime: getDateInFuture("dinner", 5),
             message_for_producer: "Make em delicious.",
@@ -221,22 +211,22 @@ db.active_order.insertMany(
             _id: objId1,
             consumer_id: consumerMap.get("Jose")._id,
             producer_id: producerMap.get("Jenna")._id,    
-            items: [{
-                food_item: {
-                    diet_preference: "Vegan",
+            items: [
+                {
+                    diet_preference: ["Vegan"],
                     description: "Blueberry Cookie",
-                    photo: "N/A",
+                    photo: "http://rut.com",
                     price: Double(1.49),
-                    rating: 0,    
+                    rating: Double(0),    
                     name: "Jenna's Vegan Blueberry Cookies",
                     portion_size: 1.4,
                     spicy: 0,
-                    allergy: ["Gluten"]
-                }, 
-                quantity: 48
-            }],
+                    allergy: ["Gluten"],
+                    quantity: 48
+                }
+            ],
             total_price: getTotalOrderPrice(1.49, 48),
-            status: "producer accepted",
+            status: "accepted",
             meal_time: "dinner",
             order_due_datetime: getDateInFuture("dinner", 2),
             message_for_producer: "Make em very very delicious.",
@@ -247,22 +237,22 @@ db.active_order.insertMany(
             _id: objId2,
             consumer_id: consumerMap.get("Jose")._id,
             producer_id: producerMap.get("Bob")._id,    
-            items: [{
-                food_item: {
-                    diet_preference: "N/A",
+            items: [
+                {
+                    diet_preference: ["Non-Vegetarian", "High Protein"],
                     description: "Freshly grown meat from neighboring farm",
-                    photo: "N/A",
+                    photo: "http://rut.com",
                     price: Double(6.00),
-                    rating: 0,    
+                    rating: Double(0),    
                     name: "Bob's Burgers",
                     portion_size: 5,
                     spicy: 1,
-                    allergy: ["gluten"]
-                }, 
-                quantity: 2
-            }],
+                    allergy: ["gluten"],
+                    quantity: 2
+                }
+            ],
             total_price: getTotalOrderPrice(6.00, 2),
-            status: "producer accepted",
+            status: "accepted",
             meal_time: "lunch",
             order_due_datetime: getDateInFuture("lunch", 2),
             message_for_producer: "Make em not delicious.",
@@ -273,22 +263,22 @@ db.active_order.insertMany(
             _id: objId3,
             consumer_id: consumerMap.get("Jose")._id,
             producer_id: producerMap.get("Bob")._id,    
-            items: [{
-                food_item: {
-                    diet_preference: "N/A",
+            items: [
+                {
+                    diet_preference: ["Non-Vegetarian", "High Protein"],
                     description: "Freshly grown meat from neighboring farm",
-                    photo: "N/A",
+                    photo: "http://rut.com",
                     price: Double(6.00),
-                    rating: 0,    
+                    rating: Double(0),    
                     name: "Bob's Burgers",
                     portion_size: 5,
                     spicy: 1,
-                    allergy: ["gluten"]
-                },
-                quantity: 1
-            }],
+                    allergy: ["gluten"],
+                    quantity: 1
+                }
+            ],
             total_price: getTotalOrderPrice(6.00, 1),
-            status: "producer ready",
+            status: "ready",
             meal_time: "breakfast",
             order_due_datetime: getDateInFuture("breakfast", 2),
             message_for_producer: "Make only little delicious.",
@@ -337,20 +327,20 @@ db.archived_order.insertMany(
             _id: objId1,
             consumer_id: consumerMap.get("Octovio")._id,
             producer_id: producerMap.get("Jenna")._id,    
-            items: [{
-                food_item: {
-                    diet_preference: "Vegan",
+            items: [
+                {
+                    diet_preference: ["Vegan"],
                     description: "Chocolate Chip Cookie",
-                    photo: "N/A",
+                    photo: "http://rut.com",
                     price: Double(1.99),
-                    rating: 0,    
+                    rating: Double(0),    
                     name: "Jenna's Vegan Chocolate Chip Cookies",
                     portion_size: 1.5,
                     spicy: 0,
-                    allergy: ["Gluten"]
-                }, 
-                quantity: 6
-            }],
+                    allergy: ["Gluten"],
+                    quantity: 6
+                }
+            ],
             total_price: getTotalOrderPrice(1.99, 6),
             status: "completed",
             meal_time: "dinner",
@@ -363,20 +353,20 @@ db.archived_order.insertMany(
             _id: objId2,
             consumer_id: consumerMap.get("Octovio")._id,
             producer_id: producerMap.get("Bob")._id,    
-            items: [{
-                food_item: {
-                    diet_preference: "N/A",
+            items: [
+                {
+                    diet_preference: ["Non-Vegetarian", "High Protein"],
                     description: "Freshly grown meat from neighboring farm",
-                    photo: "N/A",
+                    photo: "http://rut.com",
                     price: Double(6.00),
-                    rating: 0,
+                    rating: Double(0),
                     name: "Bob's Burgers",
                     portion_size: 5,
                     spicy: 1,
-                    allergy: ["gluten"]
-                }, 
-                quantity: 7
-            }],
+                    allergy: ["gluten"],
+                    quantity: 7
+                }
+            ],
             total_price: getTotalOrderPrice(6.00, 7),
             status: "completed",
             meal_time: "lunch",
@@ -392,31 +382,61 @@ db.archived_order.insertMany(
 // Antony's Order
 /********************************************************************** */
 objId1 = new ObjectId();
+objId2 = new ObjectId();
 
 db.archived_order.insertOne(
     {
         _id: objId1,
         consumer_id: consumerMap.get("Antony")._id,
         producer_id: producerMap.get("Jenna")._id,    
-        items: [{
-            food_item: {
-                diet_preference: "Vegan",
+        items: [
+            {
+                diet_preference: ["Vegan"],
                 description: "Chocolate Chip Cookie",
-                photo: "N/A",
+                photo: "http://rut.com",
                 price: Double(1.99),
-                rating: 0,    
+                rating: Double(0),    
                 name: "Jenna's Vegan Chocolate Chip Cookies",
                 portion_size: 1.5,
                 spicy: 0,
-                allergy: ["Gluten"]
-            }, 
-            quantity: 1
-        }],
+                allergy: ["Gluten"],
+                quantity: 1
+            }
+        ],
         total_price: getTotalOrderPrice(1.99, 1),
-        status: "canceled",
+        status: "cancelled_by_consumer",
         meal_time: "dinner",
         order_due_datetime: getDateInFuture("dinner", 2),
         message_for_producer: "Make em delicious please.",
+        date_created: new Date(),
+        date_updated: new Date()
+    }
+);
+
+db.archived_order.insertOne(
+    {
+        _id: objId2,
+        consumer_id: consumerMap.get("Octovio")._id,
+        producer_id: producerMap.get("Bob")._id,    
+        items: [
+            {
+                diet_preference: ["Non-Vegetarian", "High Protein"],
+                description: "Freshly grown meat from neighboring farm",
+                photo: "http://rut.com",
+                price: Double(6.00),
+                rating: Double(0),
+                name: "Bob's Burgers",
+                portion_size: 5,
+                spicy: 1,
+                allergy: ["gluten"],
+                quantity: 7
+            }
+        ],
+        total_price: getTotalOrderPrice(6.00, 7),
+        status: "cancelled_by_producer",
+        meal_time: "lunch",
+        order_due_datetime: getDateInFuture("lunch", 3),
+        message_for_producer: "Make it crisp please...",
         date_created: new Date(),
         date_updated: new Date()
     }
