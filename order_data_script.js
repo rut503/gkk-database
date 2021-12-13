@@ -56,8 +56,8 @@ db.active_order.insertMany(
             meal_time: "breakfast",
             order_due_datetime: getDateInFuture("breakfast", 1),
             message_for_producer: "These better be great Pies!!!",
-            date_updated: new Date(),
-            date_created: new Date()
+            date_created: new Date(),
+            date_updated: new Date()
         },
         {
             _id: objId2,
@@ -82,8 +82,8 @@ db.active_order.insertMany(
             meal_time: "breakfast",
             order_due_datetime: getDateInFuture("breakfast", 7),
             message_for_producer: "These better be great PB&Js too!!!",
-            date_updated: new Date(),
-            date_created: new Date()
+            date_created: new Date(),
+            date_updated: new Date()
         }
     ]
 );
@@ -136,8 +136,8 @@ db.active_order.insertMany(
             meal_time: "dinner",
             order_due_datetime: getDateInFuture("dinner", 6),
             message_for_producer: "Make em sweet af!!!",
-            date_updated: new Date(),
-            date_created: new Date()
+            date_created: new Date(),
+            date_updated: new Date()
         },
         { 
             _id: objId2,
@@ -174,8 +174,8 @@ db.active_order.insertMany(
             meal_time: "dinner",
             order_due_datetime: getDateInFuture("dinner", 5),
             message_for_producer: "Make em delicious.",
-            date_updated: new Date(),
-            date_created: new Date()
+            date_created: new Date(),
+            date_updated: new Date()
         }
     ]
 );
@@ -230,8 +230,8 @@ db.active_order.insertMany(
             meal_time: "dinner",
             order_due_datetime: getDateInFuture("dinner", 2),
             message_for_producer: "Make em very very delicious.",
-            date_updated: new Date(),
-            date_created: new Date()
+            date_created: new Date(),
+            date_updated: new Date()
         },
         {
             _id: objId2,
@@ -256,8 +256,8 @@ db.active_order.insertMany(
             meal_time: "lunch",
             order_due_datetime: getDateInFuture("lunch", 2),
             message_for_producer: "Make em not delicious.",
-            date_updated: new Date(),
-            date_created: new Date()
+            date_created: new Date(),
+            date_updated: new Date()
         },
         {
             _id: objId3,
@@ -282,8 +282,8 @@ db.active_order.insertMany(
             meal_time: "breakfast",
             order_due_datetime: getDateInFuture("breakfast", 2),
             message_for_producer: "Make only little delicious.",
-            date_updated: new Date(),
-            date_created: new Date()
+            date_created: new Date(),
+            date_updated: new Date()
         }
     ]
 );
@@ -346,8 +346,8 @@ db.archived_order.insertMany(
             meal_time: "dinner",
             order_due_datetime: getDateInFuture("dinner", 5),
             message_for_producer: "Can you add some green grapes?",
-            date_updated: new Date(),
-            date_created: new Date()
+            date_created: new Date(),
+            date_updated: new Date()
         },
         {
             _id: objId2,
@@ -372,8 +372,8 @@ db.archived_order.insertMany(
             meal_time: "lunch",
             order_due_datetime: getDateInFuture("lunch", 3),
             message_for_producer: "Make it crisp please...",
-            date_updated: new Date(),
-            date_created: new Date()
+            date_created: new Date(),
+            date_updated: new Date()
         },
     ]
 );
@@ -408,8 +408,8 @@ db.archived_order.insertOne(
         meal_time: "dinner",
         order_due_datetime: getDateInFuture("dinner", 2),
         message_for_producer: "Make em delicious please.",
-        date_updated: new Date(),
-        date_created: new Date()
+        date_created: new Date(),
+        date_updated: new Date()
     }
 );
 
@@ -437,8 +437,8 @@ db.archived_order.insertOne(
         meal_time: "lunch",
         order_due_datetime: getDateInFuture("lunch", 3),
         message_for_producer: "Make it crisp please...",
-        date_updated: new Date(),
-        date_created: new Date()
+        date_created: new Date(),
+        date_updated: new Date()
     }
 );
 
