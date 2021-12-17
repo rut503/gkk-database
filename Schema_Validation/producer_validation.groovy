@@ -5,6 +5,9 @@
       'first_name',
       'last_name',
       'phone_number',
+      'email_address',
+      'bio',
+      'photo',
       'address',
       'food_items',
       'rating',
@@ -14,61 +17,71 @@
       'date_updated'
     ],
     properties: {
-        first_name: {
+      first_name: {
+        bsonType: 'string',
+        description: 'first name of producer, must be a string'
+      },
+      last_name: {
+        bsonType: 'string',
+        description: 'last name of producer, must be a string'
+      },
+      phone_number: {
+        bsonType: 'string',
+        description: 'string format of producer\'s phone number'
+      },
+      email_address: {
+        bsonType: 'string',
+        description: 'email of producer'
+      },
+      bio: {
+        bsonType: 'string'
+      },
+      photo: {
+        bsonType: 'string'
+      },
+      address: {
+        bsonType: 'object',
+        required: [
+          'street',
+          'city',
+          'state',
+          'zip_code'
+        ],
+        properties: {
+          street: {
             bsonType: 'string',
-            description: 'first name of producer, must be a string'
+            description: 'street of producer\'s address'
           },
-          last_name: {
+          city: {
             bsonType: 'string',
-            description: 'last name of producer, must be a string'
+            description: 'city of producer\'s address'
           },
-          phone_number: {
-            bsonType: 'string',
-            description: 'string format of producer\'s phone number'
+          state: {
+            bsonType: 'string'
           },
-          address: {
-            bsonType: 'object',
-            required: [
-              'street',
-              'city',
-              'state',
-              'zip_code'
-            ],
-            properties: {
-              street: {
-                bsonType: 'string',
-                description: 'street of producer\'s address'
-              },
-              city: {
-                bsonType: 'string',
-                description: 'city of producer\'s address'
-              },
-              state: {
-                bsonType: 'string'
-              },
-              zip_code: {
-                bsonType: 'string'
-              }
-            }
-          },
-          food_items: {
-            bsonType: 'array',
-            description: 'contains the food id\'s of producers food',
-            items: {
-                bsonType: 'objectId'
-              }
-          },
-          rating: {
-              bsonType: 'double'
-          },
-          active_orders: {
-              bsonType: 'array',
-              description: 'Array referencing the orders for this producer',
-              items: {
-                  bsonType: 'objectId'
-              }
-          },
-          menu: {
+          zip_code: {
+            bsonType: 'string'
+          }
+        }
+      },
+      food_items: {
+        bsonType: 'array',
+        description: 'contains the food id\'s of producers food',
+        items: {
+          bsonType: 'objectId'
+        }
+      },
+      rating: {
+        bsonType: 'double'
+      },
+      active_orders: {
+        bsonType: 'array',
+        description: 'Array referencing the orders for this producer',
+        items: {
+          bsonType: 'objectId'
+        }
+      },
+      menu: {
         bsonType: 'object',
         required: [
           'sunday',
