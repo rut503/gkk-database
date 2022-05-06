@@ -5,22 +5,22 @@ db.consumer.deleteMany({});
 /********************************************************************** */
 db.consumer.insertOne(
     {
-        first_name: "Juan",
-        last_name: "Lopez",    
-        phone_number: "8157890123",
-        email_address: "jlopez@gmail.com",
-        photo: "http://www.juan.com",
+        firstName: "Juan",
+        lastName: "Lopez",    
+        phoneNumber: "8157890123",
+        email: "jlopez@gmail.com",
+        photo: "https://images.unsplash.com/photo-1542178243-bc20204b769f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njl8fHVpJTIwZmFjZXxlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60",
         bio: "Hello, this is bm bio. In here I say stuff that I want others to know.",
         address: {
             street: "656 Glidden Ave",
             city: "DeKalb",
             state: "IL",
-            zip_code: "60115"
+            zipCode: "60115"
         },
         rating: Double(0.00),
-        active_orders: [],
-        date_created: new Date(),
-        date_updated: new Date()
+        activeOrders: [],
+        dateCreated: new Date(),
+        dateUpdated: new Date()
     }
 );
 
@@ -30,22 +30,22 @@ db.consumer.insertOne(
 /********************************************************************** */
 db.consumer.insertOne(    
     {
-        first_name: "Gio",
-        last_name: "Gonzalez",    
-        phone_number: "8157090123",
-        email_address: "ggonzalez@gmail.com",
-        photo: "http://www.gio.com",
+        firstName: "Gio",
+        lastName: "Gonzalez",    
+        phoneNumber: "8157090123",
+        email: "ggonzalez@gmail.com",
+        photo: "https://images.unsplash.com/photo-1520078452277-0832598937e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTZ8fHVpJTIwZmFjZXxlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60",
         bio: "Hi, I am a student at NIU and I am not sure why I am saying this here but whatever.",
         address: {
             street: "60 N Nina St",
             city: "Cortland",
             state: "IL",
-            zip_code: "60112"
+            zipCode: "60112"
         },
         rating: Double(0.00),
-        active_orders: [],
-        date_created: new Date(),
-        date_updated: new Date()
+        activeOrders: [],
+        dateCreated: new Date(),
+        dateUpdated: new Date()
     }
 );
 
@@ -54,22 +54,22 @@ db.consumer.insertOne(
 /********************************************************************** */
 db.consumer.insertOne(    
     {
-        first_name: "Jose",
-        last_name: "Hernandez",    
-        phone_number: "8157096489",
-        email_address: "jhernandez@gmail.com",
-        photo: "http://www.jose.com",
+        firstName: "Jose",
+        lastName: "Hernandez",    
+        phoneNumber: "8157096489",
+        email: "jhernandez@gmail.com",
+        photo: "https://images.unsplash.com/photo-1600443299762-7a743123645d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDB8fHVpJTIwZmFjZXxlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60",
         bio: "Good day, I was created by greg and he gave me the name. Now sure what my purpose is here!",
         address: {
             street: "26 N Nina St",
             city: "Cortland",
             state: "IL",
-            zip_code: "60112"
+            zipCode: "60112"
         },
         rating: Double(0.00),
-        active_orders: [],
-        date_created: new Date(),
-        date_updated: new Date()
+        activeOrders: [],
+        dateCreated: new Date(),
+        dateUpdated: new Date()
     }
 );
 
@@ -78,22 +78,22 @@ db.consumer.insertOne(
 /********************************************************************** */
 db.consumer.insertOne(    
     {
-        first_name: "Octovio",
-        last_name: "Ramirez",    
-        phone_number: "8158196927",
-        email_address: "oramirez@gmail.com",
-        photo: "http://www.octovio.com",
+        firstName: "Octovio",
+        lastName: "Ramirez",    
+        phoneNumber: "8158196927",
+        email: "oramirez@gmail.com",
+        photo: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8dWklMjBmYWNlfGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=500&q=60",
         bio: "Bad day, I was created by rut and he didn't gave me this name. I wonder who did tho!",
         address: {
             street: "306 W Hillcrest Dr",
             city: "DeKalb",
             state: "IL",
-            zip_code: "60115"
+            zipCode: "60115"
         },
         rating: Double(0.00),
-        active_orders: [],
-        date_created: new Date(),
-        date_updated: new Date()
+        activeOrders: [],
+        dateCreated: new Date(),
+        dateUpdated: new Date()
     }
 );
 
@@ -102,21 +102,21 @@ db.consumer.insertOne(
 /********************************************************************** */
 db.consumer.insertOne(
     {
-        first_name: "Antony",
-        last_name: "Marc",    
-        phone_number: "8159004797",
-        email_address: "amarc@gmail.com",
-        photo: "http://www.antony.com",
+        firstName: "Antony",
+        lastName: "Marc",    
+        phoneNumber: "8159004797",
+        email: "amarc@gmail.com",
+        photo: "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dWklMjBmYWNlfGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=500&q=60",
         bio: "Listen, feel like whoever names me spelled my name wrong, I feel like it should be Anthony.",
         address: {
             street: "1490 Farmstead Ln",
             city: "Malta",
             state: "IL",
-            zip_code: "60115"
+            zipCode: "60115"
         },
         rating: Double(0.00),
-        active_orders: [],
-        date_created: new Date(),
-        date_updated: new Date()
+        activeOrders: [],
+        dateCreated: new Date(),
+        dateUpdated: new Date()
     }
 );
