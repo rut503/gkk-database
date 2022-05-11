@@ -1,5 +1,4 @@
 db.producer.deleteMany({});
-db.reviewForProducer.deleteMany({});
 
 /********************************************************************** */
 // Jenna's Producer document
@@ -21,9 +20,9 @@ db.producer.insertOne(
             state: "IL",
             zipCode: "60115"
         },
-        foodItems: [],
+        foodItemIds: [],
         rating: Double(0.00),
-        activeOrders: [],
+        activeOrderIds: [],
         // menu: {
         //     sunday: {
         //         breakfast: [],
@@ -86,9 +85,9 @@ db.producer.insertOne(
             state: "IL",
             zipCode: "60115"
         },
-        foodItems: [],
+        foodItemIds: [],
         rating: Double(5.00),
-        activeOrders: [],
+        activeOrderIds: [],
         // menu: {
         //     sunday: {
         //         breakfast: [],
@@ -151,9 +150,9 @@ db.producer.insertOne(
           state: "IL",
           zipCode: "60115"
         },
-        foodItems: [],
+        foodItemIds: [],
         rating: Double(0.00),
-        activeOrders: [],
+        activeOrderIds: [],
         // menu: {
         //     sunday: {
         //         breakfast: [],
@@ -217,9 +216,9 @@ db.producer.insertOne(
             state: "IL",
             zipCode: "60115"
         },
-        foodItems: [],
+        foodItemIds: [],
         rating: Double(0.00),
-        activeOrders: [],
+        activeOrderIds: [],
         // menu: {
         //     sunday: {
         //         breakfast: [],

@@ -18,7 +18,7 @@ db.consumer.insertOne(
             zipCode: "60115"
         },
         rating: Double(0.00),
-        activeOrders: [],
+        activeOrderIds: [],
         dateCreated: new Date(),
         dateUpdated: new Date()
     }
@@ -43,7 +43,7 @@ db.consumer.insertOne(
             zipCode: "60112"
         },
         rating: Double(0.00),
-        activeOrders: [],
+        activeOrderIds: [],
         dateCreated: new Date(),
         dateUpdated: new Date()
     }
@@ -67,7 +67,7 @@ db.consumer.insertOne(
             zipCode: "60112"
         },
         rating: Double(0.00),
-        activeOrders: [],
+        activeOrderIds: [],
         dateCreated: new Date(),
         dateUpdated: new Date()
     }
@@ -91,7 +91,7 @@ db.consumer.insertOne(
             zipCode: "60115"
         },
         rating: Double(0.00),
-        activeOrders: [],
+        activeOrderIds: [],
         dateCreated: new Date(),
         dateUpdated: new Date()
     }
@@ -115,7 +115,7 @@ db.consumer.insertOne(
             zipCode: "60115"
         },
         rating: Double(0.00),
-        activeOrders: [],
+        activeOrderIds: [],
         dateCreated: new Date(),
         dateUpdated: new Date()
     }
