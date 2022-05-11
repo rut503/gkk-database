@@ -39,15 +39,15 @@ db.activeOrder.insertMany(
             producerId: producerMap.get("Marietta")._id,
             items: [
                 {
-                    dietPreference: ["Vegetarian"],
+                    dietPreferences: ["Vegetarian"],
                     description: "Apple or Pumpkin flavor",
                     photo: "https://images.unsplash.com/photo-1572383672419-ab35444a6934?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
                     price: Double(5.25),
                     rating: Double(0),    
                     name: "Pie",
                     portionSize: 3,
-                    spicy: 0,
-                    allergy: ["Dairy", "Soy"],
+                    spiciness: 0,
+                    allergies: ["Dairy", "Soy"],
                     quantity: 12
                 }
             ],
@@ -65,15 +65,15 @@ db.activeOrder.insertMany(
             producerId: producerMap.get("Marietta")._id,
             items:[
                 {
-                    dietPreference: ["High Protein", "Vegetarian"],
+                    dietPreferences: ["High Protein", "Vegetarian"],
                     description: "Peanut Butter Jelly",
                     photo: "https://images.unsplash.com/photo-1562772249-809f2de8fd76?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
                     price: Double(2.45),
                     rating: Double(0),    
                     name: "Peanut Butter Jeally",
                     portionSize: 1.8,
-                    spicy: 0,
-                    allergy: ["Peanut Butter", "Dairy", "Soy"],
+                    spiciness: 0,
+                    allergies: ["Peanut Butter", "Dairy", "Soy"],
                     quantity: 24
                 }
             ],
@@ -119,15 +119,15 @@ db.activeOrder.insertMany(
             producerId: producerMap.get("Jenna")._id,    
             items: [
                 {
-                    dietPreference: ["Vegan"],
+                    dietPreferences: ["Vegan"],
                     description: "Blueberry Cookie",
                     photo: "https://images.unsplash.com/photo-1590080874088-eec64895b423?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=894&q=80",
                     price: Double(1.49),
                     rating: Double(0),    
                     name: "Jenna's Vegan Blueberry Cookies",
                     portionSize: 1.4,
-                    spicy: 0,
-                    allergy: ["Gluten"],
+                    spiciness: 0,
+                    allergies: ["Gluten"],
                     quantity: 2
                 }
             ],
@@ -145,27 +145,27 @@ db.activeOrder.insertMany(
             producerId: producerMap.get("Jenna")._id,    
             items: [
                 {
-                    dietPreference: ["Vegan"],
+                    dietPreferences: ["Vegan"],
                     description: "Vegan Meat Balls, very tasty and real like.",
                     photo: "https://veganhuggs.com/wp-content/uploads/2021/03/vegan-swedish-meatballs-square-cropped.jpg",
                     price: Double(9.99),
                     rating: Double(0),    
                     name: "Jenna's Vegan Meat Balls",
                     portionSize: 5.5,
-                    spicy: 0,
-                    allergy: ["Wheat"],
+                    spiciness: 0,
+                    allergies: ["Wheat"],
                     quantity: 2
                 },
                 {
-                    dietPreference: ["Vegan"],
+                    dietPreferences: ["Vegan"],
                     description: "Chocolate Chip Cookie",
                     photo: "https://images.unsplash.com/photo-1629677594742-58acc2c5ca82?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
                     price: Double(1.99),
                     rating: Double(0),    
                     name: "Jenna's Vegan Chocolate Chip Cookies",
                     portionSize: 1.5,
-                    spicy: 0,
-                    allergy: ["Gluten"],
+                    spiciness: 0,
+                    allergies: ["Gluten"],
                     quantity: 5
                 }
             ],
@@ -213,15 +213,15 @@ db.activeOrder.insertMany(
             producerId: producerMap.get("Jenna")._id,    
             items: [
                 {
-                    dietPreference: ["Vegan"],
+                    dietPreferences: ["Vegan"],
                     description: "Blueberry Cookie",
                     photo: "https://images.unsplash.com/photo-1590080874088-eec64895b423?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=894&q=80",
                     price: Double(1.49),
                     rating: Double(0),    
                     name: "Jenna's Vegan Blueberry Cookies",
                     portionSize: 1.4,
-                    spicy: 0,
-                    allergy: ["Gluten"],
+                    spiciness: 0,
+                    allergies: ["Gluten"],
                     quantity: 48
                 }
             ],
@@ -239,15 +239,15 @@ db.activeOrder.insertMany(
             producerId: producerMap.get("Bob")._id,    
             items: [
                 {
-                    dietPreference: ["Non-Vegetarian", "High Protein"],
+                    dietPreferences: ["Non-Vegetarian", "High Protein"],
                     description: "Freshly grown meat from neighboring farm",
                     photo: "https://images.unsplash.com/photo-1595356161904-6708c97be89c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
                     price: Double(6.00),
                     rating: Double(0),    
                     name: "Bob's Burgers",
                     portionSize: 5,
-                    spicy: 1,
-                    allergy: ["gluten"],
+                    spiciness: 1,
+                    allergies: ["gluten"],
                     quantity: 2
                 }
             ],
@@ -265,15 +265,15 @@ db.activeOrder.insertMany(
             producerId: producerMap.get("Bob")._id,    
             items: [
                 {
-                    dietPreference: ["Non-Vegetarian", "High Protein"],
+                    dietPreferences: ["Non-Vegetarian", "High Protein"],
                     description: "Freshly grown meat from neighboring farm",
                     photo: "https://images.unsplash.com/photo-1595356161904-6708c97be89c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
                     price: Double(6.00),
                     rating: Double(0),    
                     name: "Bob's Burgers",
                     portionSize: 5,
-                    spicy: 1,
-                    allergy: ["gluten"],
+                    spiciness: 1,
+                    allergies: ["gluten"],
                     quantity: 1
                 }
             ],
@@ -329,15 +329,15 @@ db.archivedOrder.insertMany(
             producerId: producerMap.get("Jenna")._id,    
             items: [
                 {
-                    dietPreference: ["Vegan"],
+                    dietPreferences: ["Vegan"],
                     description: "Chocolate Chip Cookie",
                     photo: "https://images.unsplash.com/photo-1629677594742-58acc2c5ca82?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
                     price: Double(1.99),
                     rating: Double(0),    
                     name: "Jenna's Vegan Chocolate Chip Cookies",
                     portionSize: 1.5,
-                    spicy: 0,
-                    allergy: ["Gluten"],
+                    spiciness: 0,
+                    allergies: ["Gluten"],
                     quantity: 6
                 }
             ],
@@ -355,15 +355,15 @@ db.archivedOrder.insertMany(
             producerId: producerMap.get("Bob")._id,    
             items: [
                 {
-                    dietPreference: ["Non-Vegetarian", "High Protein"],
+                    dietPreferences: ["Non-Vegetarian", "High Protein"],
                     description: "Freshly grown meat from neighboring farm",
                     photo: "https://images.unsplash.com/photo-1595356161904-6708c97be89c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
                     price: Double(6.00),
                     rating: Double(0),
                     name: "Bob's Burgers",
                     portionSize: 5,
-                    spicy: 1,
-                    allergy: ["gluten"],
+                    spiciness: 1,
+                    allergies: ["gluten"],
                     quantity: 7
                 }
             ],
@@ -391,15 +391,15 @@ db.archivedOrder.insertOne(
         producerId: producerMap.get("Jenna")._id,    
         items: [
             {
-                dietPreference: ["Vegan"],
+                dietPreferences: ["Vegan"],
                 description: "Chocolate Chip Cookie",
                 photo: "https://images.unsplash.com/photo-1629677594742-58acc2c5ca82?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
                 price: Double(1.99),
                 rating: Double(0),    
                 name: "Jenna's Vegan Chocolate Chip Cookies",
                 portionSize: 1.5,
-                spicy: 0,
-                allergy: ["Gluten"],
+                spiciness: 0,
+                allergies: ["Gluten"],
                 quantity: 1
             }
         ],
@@ -420,15 +420,15 @@ db.archivedOrder.insertOne(
         producerId: producerMap.get("Bob")._id,    
         items: [
             {
-                dietPreference: ["Non-Vegetarian", "High Protein"],
+                dietPreferences: ["Non-Vegetarian", "High Protein"],
                 description: "Freshly grown meat from neighboring farm",
                 photo: "https://images.unsplash.com/photo-1595356161904-6708c97be89c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
                 price: Double(6.00),
                 rating: Double(0),
                 name: "Bob's Burgers",
                 portionSize: 5,
-                spicy: 1,
-                allergy: ["gluten"],
+                spiciness: 1,
+                allergies: ["gluten"],
                 quantity: 7
             }
         ],
