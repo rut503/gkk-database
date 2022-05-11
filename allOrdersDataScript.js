@@ -37,7 +37,7 @@ db.activeOrder.insertMany(
             _id: objId1,
             consumerId: consumerMap.get("Juan")._id,
             producerId: producerMap.get("Marietta")._id,
-            items: [
+            orderedFoodItems: [
                 {
                     dietPreferences: ["Vegetarian"],
                     description: "Apple or Pumpkin flavor",
@@ -63,7 +63,7 @@ db.activeOrder.insertMany(
             _id: objId2,
             consumerId: consumerMap.get("Juan")._id,
             producerId: producerMap.get("Marietta")._id,
-            items:[
+            orderedFoodItems:[
                 {
                     dietPreferences: ["High Protein", "Vegetarian"],
                     description: "Peanut Butter Jelly",
@@ -117,7 +117,7 @@ db.activeOrder.insertMany(
             _id: objId1,
             consumerId: consumerMap.get("Gio")._id,
             producerId: producerMap.get("Jenna")._id,    
-            items: [
+            orderedFoodItems: [
                 {
                     dietPreferences: ["Vegan"],
                     description: "Blueberry Cookie",
@@ -143,7 +143,7 @@ db.activeOrder.insertMany(
             _id: objId2,
             consumerId: consumerMap.get("Gio")._id,
             producerId: producerMap.get("Jenna")._id,    
-            items: [
+            orderedFoodItems: [
                 {
                     dietPreferences: ["Vegan"],
                     description: "Vegan Meat Balls, very tasty and real like.",
@@ -211,7 +211,7 @@ db.activeOrder.insertMany(
             _id: objId1,
             consumerId: consumerMap.get("Jose")._id,
             producerId: producerMap.get("Jenna")._id,    
-            items: [
+            orderedFoodItems: [
                 {
                     dietPreferences: ["Vegan"],
                     description: "Blueberry Cookie",
@@ -237,7 +237,7 @@ db.activeOrder.insertMany(
             _id: objId2,
             consumerId: consumerMap.get("Jose")._id,
             producerId: producerMap.get("Bob")._id,    
-            items: [
+            orderedFoodItems: [
                 {
                     dietPreferences: ["Non-Vegetarian", "High Protein"],
                     description: "Freshly grown meat from neighboring farm",
@@ -263,7 +263,7 @@ db.activeOrder.insertMany(
             _id: objId3,
             consumerId: consumerMap.get("Jose")._id,
             producerId: producerMap.get("Bob")._id,    
-            items: [
+            orderedFoodItems: [
                 {
                     dietPreferences: ["Non-Vegetarian", "High Protein"],
                     description: "Freshly grown meat from neighboring farm",
@@ -327,7 +327,7 @@ db.archivedOrder.insertMany(
             _id: objId1,
             consumerId: consumerMap.get("Octovio")._id,
             producerId: producerMap.get("Jenna")._id,    
-            items: [
+            orderedFoodItems: [
                 {
                     dietPreferences: ["Vegan"],
                     description: "Chocolate Chip Cookie",
@@ -353,7 +353,7 @@ db.archivedOrder.insertMany(
             _id: objId2,
             consumerId: consumerMap.get("Octovio")._id,
             producerId: producerMap.get("Bob")._id,    
-            items: [
+            orderedFoodItems: [
                 {
                     dietPreferences: ["Non-Vegetarian", "High Protein"],
                     description: "Freshly grown meat from neighboring farm",
@@ -389,7 +389,7 @@ db.archivedOrder.insertOne(
         _id: objId1,
         consumerId: consumerMap.get("Antony")._id,
         producerId: producerMap.get("Jenna")._id,    
-        items: [
+        orderedFoodItems: [
             {
                 dietPreferences: ["Vegan"],
                 description: "Chocolate Chip Cookie",
@@ -418,7 +418,7 @@ db.archivedOrder.insertOne(
         _id: objId2,
         consumerId: consumerMap.get("Octovio")._id,
         producerId: producerMap.get("Bob")._id,    
-        items: [
+        orderedFoodItems: [
             {
                 dietPreferences: ["Non-Vegetarian", "High Protein"],
                 description: "Freshly grown meat from neighboring farm",
