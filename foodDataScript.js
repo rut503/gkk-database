@@ -66,7 +66,7 @@ db.producer.updateOne(
     },
     {
         $set: {
-            foodItems: arrayOfFoodIDS,
+            foodItemIds: arrayOfFoodIDS,
             // "menu.sunday.breakfast": arrayOfFoodIDS,
             // "menu.monday.breakfast": arrayOfFoodIDS,
             // "menu.tuesday.breakfast": arrayOfFoodIDS,
@@ -130,7 +130,7 @@ db.producer.updateOne(
     },
     {
         $set: {
-            foodItems: arrayOfFoodIDS,
+            foodItemIds: arrayOfFoodIDS,
             // "menu.friday.lunch": arrayOfFoodIDS,
             // "menu.friday.dinner": arrayOfFoodIDS,
             // "menu.sunday.lunch": arrayOfFoodIDS,
@@ -228,7 +228,7 @@ db.producer.updateOne(
     },
     {
         $set: {
-            foodItems: arrayOfFoodIDS,
+            foodItemIds: arrayOfFoodIDS,
             dateUpdated: new Date()
         } 
     }

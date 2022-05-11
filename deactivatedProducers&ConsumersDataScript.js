@@ -21,7 +21,7 @@ db.deactivatedProducer.insertOne(
             state: "IL",
             zipCode: "60115"
         },
-        foodItems: [],
+        foodItemIds: [],
         rating: Double(0.00),
         activeOrders: [],
         // menu: {
@@ -86,7 +86,7 @@ db.deactivatedProducer.insertOne(
             state: "IL",
             zipCode: "60115"
         },
-        foodItems: [],
+        foodItemIds: [],
         rating: Double(5.00),
         activeOrders: [],
         // menu: {

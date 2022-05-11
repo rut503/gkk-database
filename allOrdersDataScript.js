@@ -94,7 +94,7 @@ db.producer.updateOne(
         firstName: "Marietta"
     },
     {
-        $push: {activeOrders: { $each: [ objId1, objId2 ] } }
+        $push: {activeOrderIds: { $each: [ objId1, objId2 ] } }
     }
 )
 db.consumer.updateOne(
@@ -102,7 +102,7 @@ db.consumer.updateOne(
         firstName: "Juan"
     },
     {
-        $push: {activeOrders: { $each: [ objId1, objId2 ] } }
+        $push: {activeOrderIds: { $each: [ objId1, objId2 ] } }
     }
 );
 /********************************************************************** */
@@ -186,7 +186,7 @@ db.producer.updateOne(
         firstName: "Jenna"
     },
     {
-        $push: {activeOrders: { $each: [ objId1, objId2 ] } }
+        $push: {activeOrderIds: { $each: [ objId1, objId2 ] } }
     }
 );
 db.consumer.updateOne(
@@ -194,7 +194,7 @@ db.consumer.updateOne(
         firstName: "Gio"
     },
     {
-        $push: {activeOrders: { $each: [ objId1, objId2 ] } }
+        $push: {activeOrderIds: { $each: [ objId1, objId2 ] } }
     }
 );
 
@@ -294,7 +294,7 @@ db.producer.updateOne(
         firstName: "Jenna"
     },
     {
-        $push: {activeOrders: objId1 }
+        $push: {activeOrderIds: objId1 }
     }
 );
 db.producer.updateOne(
@@ -302,7 +302,7 @@ db.producer.updateOne(
         firstName: "Bob"
     },
     {
-        $push: {activeOrders: { $each: [objId2, objId3] }}
+        $push: {activeOrderIds: { $each: [objId2, objId3] }}
     }
 );
 
@@ -311,7 +311,7 @@ db.consumer.updateOne(
         firstName: "Jose"
     },
     {
-        $push: {activeOrders: { $each: [ objId1, objId2, objId3 ] } }
+        $push: {activeOrderIds: { $each: [ objId1, objId2, objId3 ] } }
     }
 );
 
